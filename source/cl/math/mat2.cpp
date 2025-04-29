@@ -8,8 +8,8 @@ mat2_t mat2(num_t x) {
     mat2_t out;
 
     out.e00 = x;
-    out.e01 = 0.0;
-    out.e10 = 0.0;
+    out.e01 = num_t(0.0);
+    out.e10 = num_t(0.0);
     out.e11 = x;
 
     return out;
@@ -50,10 +50,10 @@ mat2_t mat2n_copy(const mat2_t& m) {
 
 // unary
 void mat2_zero(mat2_t& out) {
-    out.e00 = 0.0;
-    out.e01 = 0.0;
-    out.e10 = 0.0;
-    out.e11 = 0.0;
+    out.e00 = num_t(0.0);
+    out.e01 = num_t(0.0);
+    out.e10 = num_t(0.0);
+    out.e11 = num_t(0.0);
 }
 
 mat2_t mat2n_zero() {
@@ -65,10 +65,10 @@ mat2_t mat2n_zero() {
 }
 
 void mat2_ident(mat2_t& out) {
-    out.e00 = 1.0;
-    out.e01 = 0.0;
-    out.e10 = 0.0;
-    out.e11 = 1.0;
+    out.e00 = num_t(1.0);
+    out.e01 = num_t(0.0);
+    out.e10 = num_t(0.0);
+    out.e11 = num_t(1.0);
 }
 
 mat2_t mat2n_ident() {
@@ -279,11 +279,11 @@ void mat2_inv(mat2_t& out, const mat2_t& m) {
           e10 = m.e10, e11 = m.e11;
     num_t det = e00 * e11 - e10 * e01;
 
-    if (abs(det) < EPSILON) {
+    if (abs(det) < num_t(EPSILON)) {
         return;
     }
 
-    det = 1.0 / det;
+    det = num_t(1.0) / det;
 
     out.e00 = e11 * det;
     out.e01 = -e01 * det;

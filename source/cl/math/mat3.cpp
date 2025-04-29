@@ -8,13 +8,13 @@ mat3_t mat3(num_t x) {
     mat3_t out;
 
     out.e00 = x;
-    out.e01 = 0.0;
-    out.e02 = 0.0;
-    out.e10 = 0.0;
+    out.e01 = num_t(0.0);
+    out.e02 = num_t(0.0);
+    out.e10 = num_t(0.0);
     out.e11 = x;
-    out.e12 = 0.0;
-    out.e20 = 0.0;
-    out.e21 = 0.0;
+    out.e12 = num_t(0.0);
+    out.e20 = num_t(0.0);
+    out.e21 = num_t(0.0);
     out.e22 = x;
 
     return out;
@@ -70,15 +70,15 @@ mat3_t mat3n_copy(const mat3_t& m) {
 
 // unary
 void mat3_zero(mat3_t& out) {
-    out.e00 = 0.0;
-    out.e01 = 0.0;
-    out.e02 = 0.0;
-    out.e10 = 0.0;
-    out.e11 = 0.0;
-    out.e12 = 0.0;
-    out.e20 = 0.0;
-    out.e21 = 0.0;
-    out.e22 = 0.0;
+    out.e00 = num_t(0.0);
+    out.e01 = num_t(0.0);
+    out.e02 = num_t(0.0);
+    out.e10 = num_t(0.0);
+    out.e11 = num_t(0.0);
+    out.e12 = num_t(0.0);
+    out.e20 = num_t(0.0);
+    out.e21 = num_t(0.0);
+    out.e22 = num_t(0.0);
 }
 
 mat3_t mat3n_zero() {
@@ -90,15 +90,15 @@ mat3_t mat3n_zero() {
 }
 
 void mat3_ident(mat3_t& out) {
-    out.e00 = 1.0;
-    out.e01 = 0.0;
-    out.e02 = 0.0;
-    out.e10 = 0.0;
-    out.e11 = 1.0;
-    out.e12 = 0.0;
-    out.e20 = 0.0;
-    out.e21 = 0.0;
-    out.e22 = 1.0;
+    out.e00 = num_t(1.0);
+    out.e01 = num_t(0.0);
+    out.e02 = num_t(0.0);
+    out.e10 = num_t(0.0);
+    out.e11 = num_t(1.0);
+    out.e12 = num_t(0.0);
+    out.e20 = num_t(0.0);
+    out.e21 = num_t(0.0);
+    out.e22 = num_t(1.0);
 }
 
 mat3_t mat3n_ident() {
@@ -367,11 +367,11 @@ void mat3_inv(mat3_t& out, const mat3_t& m) {
     num_t b21 = a21 * a10 - a11 * a20;
     num_t det = a00 * b01 + a01 * b11 + a02 * b21;
 
-    if (abs(det) < EPSILON) {
+    if (abs(det) < num_t(EPSILON)) {
         return;
     }
 
-    det = 1.0 / det;
+    det = num_t(1.0) / det;
 
     out.e00 = b01 * det;
     out.e01 = (-a22 * a01 + a02 * a21) * det;

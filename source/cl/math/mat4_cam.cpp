@@ -16,9 +16,9 @@ void mat4_look_at(mat4_t& out, const vec3_t& eye, const vec3_t& center, const ve
     num_t centerz = center.z;
 
     if (
-        abs(eyex - centerx) < EPSILON &&
-        abs(eyey - centery) < EPSILON &&
-        abs(eyez - centerz) < EPSILON
+        abs(eyex - centerx) < num_t(EPSILON) &&
+        abs(eyey - centery) < num_t(EPSILON) &&
+        abs(eyez - centerz) < num_t(EPSILON)
     ) {
         mat4_ident(out);
 
@@ -28,7 +28,7 @@ void mat4_look_at(mat4_t& out, const vec3_t& eye, const vec3_t& center, const ve
     z0 = eyex - centerx;
     z1 = eyey - centery;
     z2 = eyez - centerz;
-    len = 1.0 / hypot(z0, z1, z2);
+    len = num_t(1.0) / hypot(z0, z1, z2);
     z0 *= len;
     z1 *= len;
     z2 *= len;
@@ -38,11 +38,11 @@ void mat4_look_at(mat4_t& out, const vec3_t& eye, const vec3_t& center, const ve
     len = hypot(x0, x1, x2);
 
     if (!len) {
-        x0 = 0.0;
-        x1 = 0.0;
-        x2 = 0.0;
+        x0 = num_t(0.0);
+        x1 = num_t(0.0);
+        x2 = num_t(0.0);
     } else {
-        len = 1.0 / len;
+        len = num_t(1.0) / len;
         x0 *= len;
         x1 *= len;
         x2 *= len;
@@ -54,11 +54,11 @@ void mat4_look_at(mat4_t& out, const vec3_t& eye, const vec3_t& center, const ve
     len = hypot(y0, y1, y2);
 
     if (!len) {
-        y0 = 0.0;
-        y1 = 0.0;
-        y2 = 0.0;
+        y0 = num_t(0.0);
+        y1 = num_t(0.0);
+        y2 = num_t(0.0);
     } else {
-        len = 1.0 / len;
+        len = num_t(1.0) / len;
         y0 *= len;
         y1 *= len;
         y2 *= len;
@@ -67,19 +67,19 @@ void mat4_look_at(mat4_t& out, const vec3_t& eye, const vec3_t& center, const ve
     out.e00 = x0;
     out.e01 = y0;
     out.e02 = z0;
-    out.e03 = 0.0;
+    out.e03 = num_t(0.0);
     out.e10 = x1;
     out.e11 = y1;
     out.e12 = z1;
-    out.e13 = 0.0;
+    out.e13 = num_t(0.0);
     out.e20 = x2;
     out.e21 = y2;
     out.e22 = z2;
-    out.e23 = 0.0;
+    out.e23 = num_t(0.0);
     out.e30 = -(x0 * eyex + x1 * eyey + x2 * eyez);
     out.e31 = -(y0 * eyex + y1 * eyey + y2 * eyez);
     out.e32 = -(z0 * eyex + z1 * eyey + z2 * eyez);
-    out.e33 = 1.0;
+    out.e33 = num_t(1.0);
 }
 
 mat4_t mat4n_look_at(const vec3_t& eye, const vec3_t& center, const vec3_t& up) {
@@ -100,8 +100,8 @@ void mat4_target_to(mat4_t& out, const vec3_t& eye, const vec3_t& target, const 
 
     num_t len = z0 * z0 + z1 * z1 + z2 * z2;
 
-    if (len > 0.0) {
-        len = 1.0 / sqrt(len);
+    if (len > num_t(0.0)) {
+        len = num_t(1.0) / sqrt(len);
         z0 *= len;
         z1 *= len;
         z2 *= len;
@@ -113,8 +113,8 @@ void mat4_target_to(mat4_t& out, const vec3_t& eye, const vec3_t& target, const 
 
     len = x0 * x0 + x1 * x1 + x2 * x2;
 
-    if (len > 0.0) {
-        len = 1.0 / sqrt(len);
+    if (len > num_t(0.0)) {
+        len = num_t(1.0) / sqrt(len);
         x0 *= len;
         x1 *= len;
         x2 *= len;
@@ -123,19 +123,19 @@ void mat4_target_to(mat4_t& out, const vec3_t& eye, const vec3_t& target, const 
     out.e00 = x0;
     out.e01 = x1;
     out.e02 = x2;
-    out.e03 = 0.0;
+    out.e03 = num_t(0.0);
     out.e10 = z1 * x2 - z2 * x1;
     out.e11 = z2 * x0 - z0 * x2;
     out.e12 = z0 * x1 - z1 * x0;
-    out.e13 = 0.0;
+    out.e13 = num_t(0.0);
     out.e20 = z0;
     out.e21 = z1;
     out.e22 = z2;
-    out.e23 = 0.0;
+    out.e23 = num_t(0.0);
     out.e30 = eyex;
     out.e31 = eyey;
     out.e32 = eyez;
-    out.e33 = 1.0;
+    out.e33 = num_t(1.0);
 }
 
 mat4_t mat4n_target_to(const vec3_t& eye, const vec3_t& target, const vec3_t& up) {

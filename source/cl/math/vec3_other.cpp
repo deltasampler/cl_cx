@@ -132,8 +132,8 @@ bool vec3_equals(const vec3_t& v0, const vec3_t& v1, num_t e) {
     num_t b0 = v1.x, b1 = v1.y, b2 = v1.z;
 
     return (
-        abs(a0 - b0) <= e * max(1.0, abs(a0), abs(b0)) &&
-        abs(a1 - b1) <= e * max(1.0, abs(a1), abs(b1)) &&
-        abs(a2 - b2) <= e * max(1.0, abs(a2), abs(b2))
+        abs(a0 - b0) <= e * max(num_t(1.0), abs(a0), abs(b0)) &&
+        abs(a1 - b1) <= e * max(num_t(1.0), abs(a1), abs(b1)) &&
+        abs(a2 - b2) <= e * max(num_t(1.0), abs(a2), abs(b2))
     );
 }

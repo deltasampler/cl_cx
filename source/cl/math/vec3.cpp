@@ -46,9 +46,9 @@ vec3_t vec3n_copy(const vec3_t& v) {
 
 // unary
 void vec3_zero(vec3_t& out) {
-    out.x = 0.0;
-    out.y = 0.0;
-    out.z = 0.0;
+    out.x = num_t(0.0);
+    out.y = num_t(0.0);
+    out.z = num_t(0.0);
 }
 
 vec3_t vec3n_zero() {
@@ -96,9 +96,9 @@ void vec3m_neg(vec3_t& out) {
 }
 
 void vec3_inv(vec3_t& out, const vec3_t& v) {
-    out.x = 1.0 / v.x;
-    out.y = 1.0 / v.y;
-    out.z = 1.0 / v.z;
+    out.x = num_t(1.0) / v.x;
+    out.y = num_t(1.0) / v.y;
+    out.z = num_t(1.0) / v.z;
 }
 
 vec3_t vec3n_inv(const vec3_t& v) {
@@ -327,8 +327,8 @@ void vec3_unit(vec3_t& out, const vec3_t& v) {
     num_t x = v.x, y = v.y, z = v.z;
     num_t l = x * x + y * y + z * z;
 
-    if (l > 0.0) {
-        l = 1.0 / sqrt(l);
+    if (l > num_t(0.0)) {
+        l = num_t(1.0) / sqrt(l);
     }
 
     out.x = x * l;
@@ -352,8 +352,8 @@ void vec3_dir(vec3_t& out, const vec3_t& v0, const vec3_t& v1) {
     num_t x = v0.x - v1.x, y = v0.y - v1.y, z = v0.z - v1.z;
     num_t l = x * x + y * y + z * z;
 
-    if (l > 0.0) {
-        l = 1.0 / sqrt(l);
+    if (l > num_t(0.0)) {
+        l = num_t(1.0) / sqrt(l);
     }
 
     out.x = x * l;
@@ -371,7 +371,7 @@ vec3_t vec3n_dir(vec3_t& v0, const vec3_t& v1) {
 
 // geometric
 void vec3_refl(vec3_t& out, const vec3_t& v, const vec3_t& n) {
-    num_t l = vec3_dot(n, v) * 2.0;
+    num_t l = vec3_dot(n, v) * num_t(2.0);
 
     out.x = v.x - n.x * l;
     out.y = v.y - n.y * l;

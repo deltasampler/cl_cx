@@ -4,9 +4,9 @@
 #include "vec3_rand.h"
 
 void vec3_rand(vec3_t& out) {
-    out.x = random();
-    out.y = random();
-    out.z = random();
+    out.x = (num_t)random();
+    out.y = (num_t)random();
+    out.z = (num_t)random();
 }
 
 vec3_t vec3n_rand() {
@@ -18,9 +18,9 @@ vec3_t vec3n_rand() {
 }
 
 void vec3_rand_unit(vec3_t& out, f32 scale) {
-    num_t r = random() * 2.0 * PI;
-    num_t z = random() * 2.0 - 1.0;
-    num_t z_scale = sqrt(1.0 - z * z) * scale;
+    num_t r = (num_t)random() * num_t(2.0) * num_t(PI);
+    num_t z = (num_t)random() * num_t(2.0) - num_t(1.0);
+    num_t z_scale = sqrt(num_t(1.0) - z * z) * scale;
 
     out.x = cos(r) * z_scale;
     out.y = sin(r) * z_scale;

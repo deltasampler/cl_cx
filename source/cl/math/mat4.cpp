@@ -8,20 +8,20 @@ mat4_t mat4(num_t x) {
     mat4_t out;
 
     out.e00 = x;
-    out.e01 = 0.0;
-    out.e02 = 0.0;
-    out.e03 = 0.0;
-    out.e10 = 0.0;
+    out.e01 = num_t(0.0);
+    out.e02 = num_t(0.0);
+    out.e03 = num_t(0.0);
+    out.e10 = num_t(0.0);
     out.e11 = x;
-    out.e12 = 0.0;
-    out.e13 = 0.0;
-    out.e20 = 0.0;
-    out.e21 = 0.0;
+    out.e12 = num_t(0.0);
+    out.e13 = num_t(0.0);
+    out.e20 = num_t(0.0);
+    out.e21 = num_t(0.0);
     out.e22 = x;
-    out.e23 = 0.0;
-    out.e30 = 0.0;
-    out.e31 = 0.0;
-    out.e32 = 0.0;
+    out.e23 = num_t(0.0);
+    out.e30 = num_t(0.0);
+    out.e31 = num_t(0.0);
+    out.e32 = num_t(0.0);
     out.e33 = x;
 
     return out;
@@ -98,21 +98,21 @@ mat4_t mat4n_copy(const mat4_t& m) {
 
 // unary
 void mat4_zero(mat4_t& out) {
-    out.e00 = 0.0;
-    out.e01 = 0.0;
-    out.e02 = 0.0;
-    out.e03 = 0.0;
-    out.e10 = 0.0;
-    out.e11 = 0.0;
-    out.e13 = 0.0;
-    out.e20 = 0.0;
-    out.e21 = 0.0;
-    out.e22 = 0.0;
-    out.e23 = 0.0;
-    out.e30 = 0.0;
-    out.e31 = 0.0;
-    out.e32 = 0.0;
-    out.e33 = 0.0;
+    out.e00 = num_t(0.0);
+    out.e01 = num_t(0.0);
+    out.e02 = num_t(0.0);
+    out.e03 = num_t(0.0);
+    out.e10 = num_t(0.0);
+    out.e11 = num_t(0.0);
+    out.e13 = num_t(0.0);
+    out.e20 = num_t(0.0);
+    out.e21 = num_t(0.0);
+    out.e22 = num_t(0.0);
+    out.e23 = num_t(0.0);
+    out.e30 = num_t(0.0);
+    out.e31 = num_t(0.0);
+    out.e32 = num_t(0.0);
+    out.e33 = num_t(0.0);
 }
 
 mat4_t mat4n_zero() {
@@ -124,22 +124,22 @@ mat4_t mat4n_zero() {
 }
 
 void mat4_ident(mat4_t& out) {
-    out.e00 = 1.0;
-    out.e01 = 0.0;
-    out.e02 = 0.0;
-    out.e03 = 0.0;
-    out.e10 = 0.0;
-    out.e11 = 1.0;
-    out.e12 = 0.0;
-    out.e13 = 0.0;
-    out.e20 = 0.0;
-    out.e21 = 0.0;
-    out.e22 = 1.0;
-    out.e23 = 0.0;
-    out.e30 = 0.0;
-    out.e31 = 0.0;
-    out.e32 = 0.0;
-    out.e33 = 1.0;
+    out.e00 = num_t(1.0);
+    out.e01 = num_t(0.0);
+    out.e02 = num_t(0.0);
+    out.e03 = num_t(0.0);
+    out.e10 = num_t(0.0);
+    out.e11 = num_t(1.0);
+    out.e12 = num_t(0.0);
+    out.e13 = num_t(0.0);
+    out.e20 = num_t(0.0);
+    out.e21 = num_t(0.0);
+    out.e22 = num_t(1.0);
+    out.e23 = num_t(0.0);
+    out.e30 = num_t(0.0);
+    out.e31 = num_t(0.0);
+    out.e32 = num_t(0.0);
+    out.e33 = num_t(1.0);
 }
 
 mat4_t mat4n_ident() {
@@ -498,11 +498,11 @@ void mat4_inv(mat4_t& out, const mat4_t& m) {
 
     num_t det = b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06;
 
-    if (abs(det) < EPSILON) {
+    if (abs(det) < num_t(EPSILON)) {
         return;
     }
 
-    det = 1.0 / det;
+    det = num_t(1.0) / det;
 
     out.e00 = (a11 * b11 - a12 * b10 + a13 * b09) * det;
     out.e01 = (a02 * b10 - a01 * b11 - a03 * b09) * det;

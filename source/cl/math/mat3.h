@@ -4,7 +4,7 @@
 #include "vec3_t.h"
 
 // creation
-mat3_t mat3(num_t x = 1.0);
+mat3_t mat3(num_t x = num_t(1.0));
 mat3_t mat3(num_t e00, num_t e01, num_t e02, num_t e10, num_t e11, num_t e12, num_t e20, num_t e21, num_t e22);
 
 void mat3_set(mat3_t& out, num_t e00, num_t e01, num_t e02, num_t e10, num_t e11, num_t e12, num_t e20, num_t e21, num_t e22);

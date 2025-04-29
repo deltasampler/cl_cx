@@ -42,8 +42,8 @@ vec2_t vec2n_copy(const vec2_t& v) {
 
 // unary
 void vec2_zero(vec2_t& out) {
-    out.x = 0.0;
-    out.y = 0.0;
+    out.x = num_t(0.0);
+    out.y = num_t(0.0);
 }
 
 vec2_t vec2n_zero() {
@@ -89,8 +89,8 @@ void vec2m_neg(vec2_t& out) {
 }
 
 void vec2_inv(vec2_t& out, const vec2_t& v) {
-    out.x = 1.0 / v.x;
-    out.y = 1.0 / v.y;
+    out.x = num_t(1.0) / v.x;
+    out.y = num_t(1.0) / v.y;
 }
 
 vec2_t vec2n_inv(const vec2_t& v) {
@@ -295,8 +295,8 @@ void vec2_unit(vec2_t& out, const vec2_t& v) {
     num_t x = v.x, y = v.y;
     num_t l = x * x + y * y;
 
-    if (l > 0.0) {
-        l = 1.0 / sqrt(l);
+    if (l > num_t(0.0)) {
+        l = num_t(1.0) / sqrt(l);
     }
 
     out.x = x * l;
@@ -319,8 +319,8 @@ void vec2_dir(vec2_t& out, const vec2_t& v0, const vec2_t& v1) {
     num_t x = v0.x - v1.x, y = v0.y - v1.y;
     num_t l = x * x + y * y;
 
-    if (l > 0.0) {
-        l = 1.0 / sqrt(l);
+    if (l > num_t(0.0)) {
+        l = num_t(1.0) / sqrt(l);
     }
 
     out.x = x * l;
@@ -337,7 +337,7 @@ vec2_t vec2n_dir(vec2_t& v0, const vec2_t& v1) {
 
 // geometric
 void vec2_refl(vec2_t& out, const vec2_t& v, const vec2_t& n) {
-    num_t l = vec2_dot(n, v) * 2.0;
+    num_t l = vec2_dot(n, v) * num_t(2.0);
 
     out.x = v.x - n.x * l;
     out.y = v.y - n.y * l;
@@ -449,7 +449,7 @@ num_t vec2_angle2(const vec2_t& v0, const vec2_t& v1) {
     num_t mag = sqrt((ax * ax + ay * ay) * (bx * bx + by * by));
     num_t c = mag && (ax * bx + ay * by) / mag;
 
-    return acos(min(max(c, -1.0), 1.0));
+    return acos(min(max(c, num_t(-1.0)), num_t(1.0)));
 }
 
 // string

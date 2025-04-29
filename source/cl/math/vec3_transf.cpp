@@ -22,7 +22,7 @@ void vec3m_transf_mat3(vec3_t& out, const mat3_t& m) {
 
 void vec3_transf_mat4(vec3_t& out, const vec3_t& v, const mat4_t& m) {
     num_t x = v.x, y = v.y, z = v.z;
-    num_t w = (m.e03 * x + m.e13 * y + m.e23 * z + m.e33) || 1.0;
+    num_t w = (m.e03 * x + m.e13 * y + m.e23 * z + m.e33) || num_t(1.0);
 
     out.x = (m.e00 * x + m.e10 * y + m.e20 * z + m.e30) / w;
     out.y = (m.e01 * x + m.e11 * y + m.e21 * z + m.e31) / w;

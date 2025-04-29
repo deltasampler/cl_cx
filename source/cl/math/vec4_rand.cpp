@@ -4,10 +4,10 @@
 #include "vec4_rand.h"
 
 void vec4_rand(vec4_t& out) {
-    out.x = random();
-    out.y = random();
-    out.z = random();
-    out.w = random();
+    out.x = (num_t)random();
+    out.y = (num_t)random();
+    out.z = (num_t)random();
+    out.w = (num_t)random();
 }
 
 vec4_t vec4n_rand() {

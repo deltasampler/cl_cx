@@ -3,22 +3,22 @@
 #include "mat4_affine.h"
 
 void mat4_translation(mat4_t& out, const vec3_t& v) {
-    out.e00 = 1.0;
-    out.e01 = 0.0;
-    out.e02 = 0.0;
-    out.e03 = 0.0;
-    out.e10 = 0.0;
-    out.e11 = 1.0;
-    out.e12 = 0.0;
-    out.e13 = 0.0;
-    out.e20 = 0.0;
-    out.e21 = 0.0;
-    out.e22 = 1.0;
-    out.e23 = 0.0;
+    out.e00 = num_t(1.0);
+    out.e01 = num_t(0.0);
+    out.e02 = num_t(0.0);
+    out.e03 = num_t(0.0);
+    out.e10 = num_t(0.0);
+    out.e11 = num_t(1.0);
+    out.e12 = num_t(0.0);
+    out.e13 = num_t(0.0);
+    out.e20 = num_t(0.0);
+    out.e21 = num_t(0.0);
+    out.e22 = num_t(1.0);
+    out.e23 = num_t(0.0);
     out.e30 = v.x;
     out.e31 = v.y;
     out.e32 = v.z;
-    out.e33 = 1.0;
+    out.e33 = num_t(1.0);
 }
 
 mat4_t mat4n_translation(const vec3_t& v) {
@@ -44,22 +44,22 @@ mat4_t mat4n_rotation(num_t r, const vec3_t& axis) {
 void mat4_rotation_x(mat4_t& out, num_t r) {
     num_t s = sin(r), c = cos(r);
 
-    out.e00 = 1.0;
-    out.e01 = 0.0;
-    out.e02 = 0.0;
-    out.e03 = 0.0;
-    out.e10 = 0.0;
+    out.e00 = num_t(1.0);
+    out.e01 = num_t(0.0);
+    out.e02 = num_t(0.0);
+    out.e03 = num_t(0.0);
+    out.e10 = num_t(0.0);
     out.e11 = c;
     out.e12 = s;
-    out.e13 = 0.0;
-    out.e20 = 0.0;
+    out.e13 = num_t(0.0);
+    out.e20 = num_t(0.0);
     out.e21 = -s;
     out.e22 = c;
-    out.e23 = 0.0;
-    out.e30 = 0.0;
-    out.e31 = 0.0;
-    out.e32 = 0.0;
-    out.e33 = 1.0;
+    out.e23 = num_t(0.0);
+    out.e30 = num_t(0.0);
+    out.e31 = num_t(0.0);
+    out.e32 = num_t(0.0);
+    out.e33 = num_t(1.0);
 }
 
 mat4_t mat4n_rotation_x(num_t r) {
@@ -74,21 +74,21 @@ void mat4_rotation_y(mat4_t& out, num_t r) {
     num_t s = sin(r), c = cos(r);
 
     out.e00 = c;
-    out.e01 = 0.0;
+    out.e01 = num_t(0.0);
     out.e02 = -s;
-    out.e03 = 0.0;
-    out.e10 = 0.0;
-    out.e11 = 1.0;
-    out.e12 = 0.0;
-    out.e13 = 0.0;
+    out.e03 = num_t(0.0);
+    out.e10 = num_t(0.0);
+    out.e11 = num_t(1.0);
+    out.e12 = num_t(0.0);
+    out.e13 = num_t(0.0);
     out.e20 = s;
-    out.e21 = 0.0;
+    out.e21 = num_t(0.0);
     out.e22 = c;
-    out.e23 = 0.0;
-    out.e30 = 0.0;
-    out.e31 = 0.0;
-    out.e32 = 0.0;
-    out.e33 = 1.0;
+    out.e23 = num_t(0.0);
+    out.e30 = num_t(0.0);
+    out.e31 = num_t(0.0);
+    out.e32 = num_t(0.0);
+    out.e33 = num_t(1.0);
 }
 
 mat4_t mat4n_rotation_y(num_t r) {
@@ -104,20 +104,20 @@ void mat4_rotation_z(mat4_t& out, num_t r) {
 
     out.e00 = c;
     out.e01 = s;
-    out.e02 = 0.0;
-    out.e03 = 0.0;
+    out.e02 = num_t(0.0);
+    out.e03 = num_t(0.0);
     out.e10 = -s;
     out.e11 = c;
-    out.e12 = 0.0;
-    out.e13 = 0.0;
-    out.e20 = 0.0;
-    out.e21 = 0.0;
-    out.e22 = 1.0;
-    out.e23 = 0.0;
-    out.e30 = 0.0;
-    out.e31 = 0.0;
-    out.e32 = 0.0;
-    out.e33 = 1.0;
+    out.e12 = num_t(0.0);
+    out.e13 = num_t(0.0);
+    out.e20 = num_t(0.0);
+    out.e21 = num_t(0.0);
+    out.e22 = num_t(1.0);
+    out.e23 = num_t(0.0);
+    out.e30 = num_t(0.0);
+    out.e31 = num_t(0.0);
+    out.e32 = num_t(0.0);
+    out.e33 = num_t(1.0);
 }
 
 mat4_t mat4n_rotation_z(num_t r) {
@@ -130,21 +130,21 @@ mat4_t mat4n_rotation_z(num_t r) {
 
 void mat4_scaling(mat4_t& out, const vec3_t& v) {
     out.e00 = v.x;
-    out.e01 = 0.0;
-    out.e02 = 0.0;
-    out.e03 = 0.0;
-    out.e10 = 0.0;
+    out.e01 = num_t(0.0);
+    out.e02 = num_t(0.0);
+    out.e03 = num_t(0.0);
+    out.e10 = num_t(0.0);
     out.e11 = v.y;
-    out.e12 = 0.0;
-    out.e13 = 0.0;
-    out.e20 = 0.0;
-    out.e21 = 0.0;
+    out.e12 = num_t(0.0);
+    out.e13 = num_t(0.0);
+    out.e20 = num_t(0.0);
+    out.e21 = num_t(0.0);
     out.e22 = v.z;
-    out.e23 = 0.0;
-    out.e30 = 0.0;
-    out.e31 = 0.0;
-    out.e32 = 0.0;
-    out.e33 = 1.0;
+    out.e23 = num_t(0.0);
+    out.e30 = num_t(0.0);
+    out.e31 = num_t(0.0);
+    out.e32 = num_t(0.0);
+    out.e33 = num_t(1.0);
 }
 
 mat4_t mat4n_scaling(const vec3_t& v) {
@@ -187,18 +187,18 @@ void mat4_rotate(mat4_t& out, const mat4_t& m, num_t r, const vec3_t& axis) {
     num_t b10, b11, b12;
     num_t b20, b21, b22;
 
-    if (len < EPSILON) {
+    if (len < num_t(EPSILON)) {
         return;
     }
 
-    len = 1.0 / len;
+    len = num_t(1.0) / len;
     x *= len;
     y *= len;
     z *= len;
 
     s = sin(r);
     c = cos(r);
-    t = 1.0 - c;
+    t = num_t(1.0) - c;
 
     a00 = m.e00;
     a01 = m.e01;

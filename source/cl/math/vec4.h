@@ -3,7 +3,7 @@
 #include "vec4_t.h"
 
 // creation
-vec4_t vec4(num_t x = 0.0);
+vec4_t vec4(num_t x = num_t(0.0));
 vec4_t vec4(num_t x, num_t y);
 
 void vec4_set(vec4_t& out, num_t x, num_t y, num_t z, num_t w);

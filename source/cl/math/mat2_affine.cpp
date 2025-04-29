@@ -21,8 +21,8 @@ mat2_t mat2n_rotation(num_t r) {
 
 void mat2_scaling(mat2_t& out, const vec2_t& v) {
     out.e00 = v.x;
-    out.e01 = 0.0;
-    out.e10 = 0.0;
+    out.e01 = num_t(0.0);
+    out.e10 = num_t(0.0);
     out.e10 = v.y;
 }
 

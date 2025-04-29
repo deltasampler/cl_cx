@@ -4,7 +4,7 @@
 #include "vec4_t.h"
 
 // creation
-mat4_t mat4(num_t x = 1.0);
+mat4_t mat4(num_t x = num_t(1.0));
 mat4_t mat4(num_t e00, num_t e01, num_t e02, num_t e03, num_t e10, num_t e11, num_t e12, num_t e13, num_t e20, num_t e21, num_t e22, num_t e23, num_t e30, num_t e31, num_t e32, num_t e33);
 
 void mat4_set(mat4_t& out, num_t e00, num_t e01, num_t e02, num_t e03, num_t e10, num_t e11, num_t e12, num_t e13, num_t e20, num_t e21, num_t e22, num_t e23, num_t e30, num_t e31, num_t e32, num_t e33);

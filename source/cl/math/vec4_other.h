@@ -36,7 +36,7 @@ void vec4m_clamp(vec4_t& out, const vec4_t& min, const vec4_t& max);
 
 // comparison
 bool vec4_equals_exact(const vec4_t& v0, const vec4_t& v1);
-bool vec4_equals(const vec4_t& v0, const vec4_t& v1, num_t e = 0.000001);
+bool vec4_equals(const vec4_t& v0, const vec4_t& v1, num_t e = num_t(0.000001));
 
 // special
 void vec4_swap(vec4_t& out, const vec4_t& v);

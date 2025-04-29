@@ -4,8 +4,8 @@
 #include "vec2_rand.h"
 
 void vec2_rand(vec2_t& out) {
-    out.x = random();
-    out.y = random();
+    out.x = (num_t)random();
+    out.y = (num_t)random();
 }
 
 vec2_t vec2n_rand() {
@@ -17,7 +17,7 @@ vec2_t vec2n_rand() {
 }
 
 void vec2_rand_unit(vec2_t& out, f32 scale) {
-    f32 r = PI * 2.0 * random();
+    f32 r = num_t(PI) * num_t(2.0) * (num_t)random();
 
     out.x = cos(r) * scale;
     out.y = sin(r) * scale;

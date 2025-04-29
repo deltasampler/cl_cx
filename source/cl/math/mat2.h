@@ -4,7 +4,7 @@
 #include "vec2_t.h"
 
 // creation
-mat2_t mat2(num_t x = 1.0);
+mat2_t mat2(num_t x = num_t(1.0));
 mat2_t mat2(num_t e00, num_t e01, num_t e10, num_t e11);
 
 void mat2_set(mat2_t& out, num_t e00, num_t e01, num_t e10, num_t e11);

@@ -6,10 +6,10 @@ f32 abs(f32 x) {
 }
 
 f32 sign(f32 x) {
-    if (x < 0.0) return -1.0;
-    if (x > 0.0) return 1.0;
+    if (x < 0.0f) return -1.0f;
+    if (x > 0.0f) return 1.0f;
 
-    return 0.0;
+    return 0.0f;
 }
 
 f32 fract(f32 x) {
@@ -30,7 +30,7 @@ f32 sqrt(f32 x) {
 }
 
 f32 invsqrt(f32 x) {
-    return 1.0 / sqrtf(x);
+    return 1.0f / sqrtf(x);
 }
 
 f32 cbrt(f32 x) {
@@ -90,11 +90,11 @@ f32 log10(f32 x) {
 
 // angles
 f32 rad(f32 x) {
-    return x * PI / 180.0;
+    return x * f32(PI) / 180.0f;
 }
 
 f32 deg(f32 x) {
-    return x * 180.0 / PI;
+    return x * 180.0f / f32(PI);
 }
 
 // trigonometric
@@ -168,7 +168,7 @@ f32 round(f32 x) {
 }
 
 f32 round2(f32 x, f32 y) {
-    f32 factor = powf(10.0, y);
+    f32 factor = powf(10.0f, y);
 
     return roundf(x * factor) / factor;
 }
@@ -210,30 +210,30 @@ f32 lerp(f32 x, f32 y, f32 t) {
 }
 
 f32 lerp2(f32 x, f32 y, f32 t) {
-    return x * (1.0 - t) + y * t;
+    return x * (1.0f - t) + y * t;
 }
 
 // step
 f32 step(f32 e, f32 x) {
     if (x < e) {
-        return 0.0;
+        return 0.0f;
     }
 
-    return 1.0;
+    return 1.0f;
 }
 
 f32 smoothstep(f32 e0, f32 e1, f32 x) {
     if (x <= e0) {
-        return 0.0;
+        return 0.0f;
     }
 
     if (x >= e1) {
-        return 1.0;
+        return 1.0f;
     }
 
     f32 t = (x - e0) / (e1 - e0);
 
-    return t * t * (3.0 - 2.0 * t);
+    return t * t * (3.0f - 2.0f * t);
 }
 
 // indexing

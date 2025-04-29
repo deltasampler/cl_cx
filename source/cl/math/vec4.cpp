@@ -50,10 +50,10 @@ vec4_t vec4n_copy(const vec4_t& v) {
 
 // unary
 void vec4_zero(vec4_t& out) {
-    out.x = 0.0;
-    out.y = 0.0;
-    out.z = 0.0;
-    out.w = 0.0;
+    out.x = num_t(0.0);
+    out.y = num_t(0.0);
+    out.z = num_t(0.0);
+    out.w = num_t(0.0);
 }
 
 vec4_t vec4n_zero() {
@@ -103,10 +103,10 @@ void vec4m_neg(vec4_t& out) {
 }
 
 void vec4_inv(vec4_t& out, const vec4_t& v) {
-    out.x = 1.0 / v.x;
-    out.y = 1.0 / v.y;
-    out.z = 1.0 / v.z;
-    out.w = 1.0 / v.w;
+    out.x = num_t(1.0) / v.x;
+    out.y = num_t(1.0) / v.y;
+    out.z = num_t(1.0) / v.z;
+    out.w = num_t(1.0) / v.w;
 }
 
 vec4_t vec4n_inv(const vec4_t& v) {
@@ -328,8 +328,8 @@ void vec4_unit(vec4_t& out, const vec4_t& v) {
     num_t x = v.x, y = v.y, z = v.z, w = v.w;
     num_t l = x * x + y * y + z * z + w * w;
 
-    if (l > 0.0) {
-        l = 1.0 / sqrt(l);
+    if (l > num_t(0.0)) {
+        l = num_t(1.0) / sqrt(l);
     }
 
     out.x = x * l;
@@ -354,8 +354,8 @@ void vec4_dir(vec4_t& out, const vec4_t& v0, const vec4_t& v1) {
     num_t x = v0.x - v1.x, y = v0.y - v1.y, z = v0.z - v1.z, w = v0.w - v1.w;
     num_t l = x * x + y * y + z * z + w * w;
 
-    if (l > 0.0) {
-        l = 1.0 / sqrt(l);
+    if (l > num_t(0.0)) {
+        l = num_t(1.0) / sqrt(l);
     }
 
     out.x = x * l;

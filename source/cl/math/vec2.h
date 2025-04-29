@@ -3,7 +3,7 @@
 #include "vec2_t.h"
 
 // creation
-vec2_t vec2(num_t x = 0.0);
+vec2_t vec2(num_t x = num_t(0.0));
 vec2_t vec2(num_t x, num_t y);
 
 void vec2_set(vec2_t& out, num_t x, num_t y);

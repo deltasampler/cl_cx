@@ -12,5 +12,5 @@ f32 rand_ex(f32 min, f32 max) {
 }
 
 f32 rand_in(f32 min, f32 max) {
-    return floor(random() * (max - min + 1.0) + min);
+    return floor(random() * (max - min + 1.0f) + min);
 }

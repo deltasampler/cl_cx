@@ -3,15 +3,15 @@
 #include "mat3_affine.h"
 
 void mat3_translation(mat3_t& out, const vec2_t& v) {
-    out.e00 = 1.0;
-    out.e01 = 0.0;
-    out.e02 = 0.0;
-    out.e10 = 0.0;
-    out.e11 = 1.0;
-    out.e12 = 0.0;
+    out.e00 = num_t(1.0);
+    out.e01 = num_t(0.0);
+    out.e02 = num_t(0.0);
+    out.e10 = num_t(0.0);
+    out.e11 = num_t(1.0);
+    out.e12 = num_t(0.0);
     out.e20 = v.x;
     out.e21 = v.y;
-    out.e22 = 1.0;
+    out.e22 = num_t(1.0);
 }
 
 mat3_t mat3n_translation(const vec2_t& v) {
@@ -27,13 +27,13 @@ void mat3_rotation(mat3_t& out, num_t r) {
 
     out.e00 = c;
     out.e01 = s;
-    out.e02 = 0.0;
+    out.e02 = num_t(0.0);
     out.e10 = -s;
     out.e11 = c;
-    out.e12 = 0.0;
-    out.e20 = 0.0;
-    out.e21 = 0.0;
-    out.e22 = 1.0;
+    out.e12 = num_t(0.0);
+    out.e20 = num_t(0.0);
+    out.e21 = num_t(0.0);
+    out.e22 = num_t(1.0);
 }
 
 mat3_t mat3n_rotation(num_t r) {
@@ -46,14 +46,14 @@ mat3_t mat3n_rotation(num_t r) {
 
 void mat3_scaling(mat3_t& out, const vec2_t& v) {
     out.e00 = v.x;
-    out.e01 = 0.0;
-    out.e02 = 0.0;
-    out.e10 = 0.0;
+    out.e01 = num_t(0.0);
+    out.e02 = num_t(0.0);
+    out.e10 = num_t(0.0);
     out.e11 = v.y;
-    out.e12 = 0.0;
-    out.e20 = 0.0;
-    out.e21 = 0.0;
-    out.e22 = 1.0;
+    out.e12 = num_t(0.0);
+    out.e20 = num_t(0.0);
+    out.e21 = num_t(0.0);
+    out.e22 = num_t(1.0);
 }
 
 mat3_t mat3n_scaling(const vec2_t& v) {
