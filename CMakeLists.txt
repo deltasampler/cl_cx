@@ -1,5 +1,6 @@
 set(
     CL_SOURCE
+    "source/cl/camera/cam2.cpp"
     "source/cl/compiler/lexer.cpp"
     "source/cl/compiler/scanner.cpp"
     "source/cl/compiler/token.cpp"
@@ -13,6 +14,7 @@ set(
     "source/cl/math/mat4_cam.cpp"
     "source/cl/math/mat4_proj.cpp"
     "source/cl/math/mat4.cpp"
+    "source/cl/math/math.cpp"
     "source/cl/math/vec2_other.cpp"
     "source/cl/math/vec2_rand.cpp"
     "source/cl/math/vec2_transf.cpp"
