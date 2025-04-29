@@ -4,7 +4,7 @@
 
 // creation
 vec3_t vec3(num_t x = num_t(0.0));
-vec3_t vec3(num_t x, num_t y);
+vec3_t vec3(num_t x, num_t y, num_t z);
 
 void vec3_set(vec3_t& out, num_t x, num_t y, num_t z);
 
