@@ -1,23 +1,8 @@
 #pragma once
 
+#undef MAT4_T
 #include "mat4_t.h"
 #include "vec4_t.h"
-
-// creation
-mat4_t mat4(num_t x = num_t(1.0));
-mat4_t mat4(num_t e00, num_t e01, num_t e02, num_t e03, num_t e10, num_t e11, num_t e12, num_t e13, num_t e20, num_t e21, num_t e22, num_t e23, num_t e30, num_t e31, num_t e32, num_t e33);
-
-void mat4_set(mat4_t& out, num_t e00, num_t e01, num_t e02, num_t e03, num_t e10, num_t e11, num_t e12, num_t e13, num_t e20, num_t e21, num_t e22, num_t e23, num_t e30, num_t e31, num_t e32, num_t e33);
-
-void mat4_copy(mat4_t& out, const mat4_t& m);
-mat4_t mat4n_copy(const mat4_t& m);
-
-// unary
-void mat4_zero(mat4_t& out);
-mat4_t mat4n_zero();
-
-void mat4_ident(mat4_t& out);
-mat4_t mat4n_ident();
 
 // arithmetic matrix x matrix
 void mat4_add(mat4_t& out, const mat4_t& m0, const mat4_t& m1);

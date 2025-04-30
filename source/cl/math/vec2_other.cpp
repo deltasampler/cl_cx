@@ -71,6 +71,23 @@ void vec2m_round(vec2_t& out) {
     vec2_round(out, out);
 }
 
+void vec2_snap(vec2_t& out, const vec2_t& v, const vec2_t c) {
+    out.x = round(v.x / c.x) * c.x;
+    out.y = round(v.y / c.y) * c.y;
+}
+
+vec2_t vec2n_snap(const vec2_t& v, const vec2_t c) {
+    vec2_t out;
+
+    vec2_snap(out, v, c);
+
+    return out;
+}
+
+void vec2m_snap(vec2_t& out, const vec2_t c) {
+    vec2_snap(out, out, c);
+}
+
 // bounding
 void vec2_min(vec2_t& out, const vec2_t& v0, const vec2_t& v1) {
     out.x = min(v0.x, v1.x);

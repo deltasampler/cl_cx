@@ -37,8 +37,3 @@ void vec3m_clamp(vec3_t& out, const vec3_t& min, const vec3_t& max);
 // comparison
 bool vec3_equals_exact(const vec3_t& v0, const vec3_t& v1);
 bool vec3_equals(const vec3_t& v0, const vec3_t& v1, num_t e = num_t(0.000001));
-
-// special
-void vec3_swap(vec3_t& out, const vec3_t& v);
-vec3_t vec3n_swap(const vec3_t& out);
-void vec3m_swap(vec3_t& out);

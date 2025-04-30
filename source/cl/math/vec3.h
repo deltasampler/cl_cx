@@ -1,20 +1,10 @@
 #pragma once
 
+#undef VEC3_T
 #include "vec3_t.h"
-
-// creation
-vec3_t vec3(num_t x = num_t(0.0));
-vec3_t vec3(num_t x, num_t y, num_t z);
-
-void vec3_set(vec3_t& out, num_t x, num_t y, num_t z);
-
-void vec3_copy(vec3_t& out, const vec3_t& v);
-vec3_t vec3n_copy(const vec3_t& v);
+#include "vec3_arithm.h"
 
 // unary
-void vec3_zero(vec3_t& out);
-vec3_t vec3n_zero();
-
 void vec3_abs(vec3_t& out, const vec3_t& v);
 vec3_t vec3n_abs(const vec3_t& out);
 void vec3m_abs(vec3_t& out);
@@ -26,45 +16,6 @@ void vec3m_neg(vec3_t& out);
 void vec3_inv(vec3_t& out, const vec3_t& v);
 vec3_t vec3n_inv(const vec3_t& out);
 void vec3m_inv(vec3_t& out);
-
-// arithmetic vector x vector
-void vec3_add(vec3_t& out, const vec3_t& v0, const vec3_t& v1);
-vec3_t vec3n_add(const vec3_t& v0, const vec3_t& v1);
-void vec3m_add(vec3_t& out, const vec3_t& v);
-
-void vec3_sub(vec3_t& out, const vec3_t& v0, const vec3_t& v1);
-vec3_t vec3n_sub(const vec3_t& v0, const vec3_t& v1);
-void vec3m_sub(vec3_t& out, const vec3_t& v);
-
-void vec3_mul(vec3_t& out, const vec3_t& v0, const vec3_t& v1);
-vec3_t vec3n_mul(const vec3_t& v0, const vec3_t& v1);
-void vec3m_mul(vec3_t& out, const vec3_t& v);
-
-void vec3_div(vec3_t& out, const vec3_t& v0, const vec3_t& v1);
-vec3_t vec3n_div(const vec3_t& v0, const vec3_t& v1);
-void vec3m_div(vec3_t& out, const vec3_t& v);
-
-// arithmetic vector x scalar
-void vec3_adds(vec3_t& out, const vec3_t& v, num_t s);
-vec3_t vec3n_adds(const vec3_t& v, num_t s);
-void vec3m_adds(vec3_t& out, num_t s);
-
-void vec3_subs(vec3_t& out, const vec3_t& v, num_t s);
-vec3_t vec3n_subs(const vec3_t& v, num_t s);
-void vec3m_subs(vec3_t& out, num_t s);
-
-void vec3_muls(vec3_t& out, const vec3_t& v, num_t s);
-vec3_t vec3n_muls(const vec3_t& v, num_t s);
-void vec3m_muls(vec3_t& out, num_t s);
-
-void vec3_divs(vec3_t& out, const vec3_t& v, num_t s);
-vec3_t vec3n_divs(const vec3_t& v, num_t s);
-void vec3m_divs(vec3_t& out, num_t s);
-
-// arithmetic vector x vector x scalar
-void vec3_addmuls(vec3_t& out, const vec3_t& v0, const vec3_t& v1, num_t s);
-vec3_t vec3n_addmuls(const vec3_t& v0, const vec3_t& v1, num_t s);
-void vec3m_addmuls(vec3_t& out, const vec3_t& v, num_t s);
 
 // product
 num_t vec3_dot(const vec3_t& v0, const vec3_t& v1);
@@ -111,28 +62,3 @@ void vec3m_rotate_z(vec3_t& out, const vec3_t& p, num_t r);
 // string
 void vec3_str(const vec3_t& v, char* str);
 void vec3_print(const vec3_t& v);
-
-// operator overloading
-vec3_t operator+(const vec3_t& v0, const vec3_t& v1);
-vec3_t& operator+=(vec3_t& out, const vec3_t& v);
-
-vec3_t operator-(const vec3_t& v0, const vec3_t& v1);
-vec3_t& operator-=(vec3_t& out, const vec3_t& v);
-
-vec3_t operator*(const vec3_t& v0, const vec3_t& v1);
-vec3_t& operator*=(vec3_t& out, const vec3_t& v);
-
-vec3_t operator/(const vec3_t& v0, const vec3_t& v1);
-vec3_t& operator/=(vec3_t& out, const vec3_t& v);
-
-vec3_t operator+(const vec3_t& v, num_t s);
-vec3_t& operator+=(vec3_t& out, num_t s);
-
-vec3_t operator-(const vec3_t& v, num_t s);
-vec3_t& operator-=(vec3_t& out, num_t s);
-
-vec3_t operator*(const vec3_t& v, num_t s);
-vec3_t& operator*=(vec3_t& out, num_t s);
-
-vec3_t operator/(const vec3_t& v, num_t s);
-vec3_t& operator/=(vec3_t& out, num_t s);

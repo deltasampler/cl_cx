@@ -3,93 +3,8 @@
 
 #include "mat2x3.h"
 
-// creation
-mat2x3_t mat2x3(num_t x) {
-    mat2x3_t out;
-
-    out.e00 = x;
-    out.e01 = num_t(0.0);
-    out.e10 = num_t(0.0);
-    out.e11 = x;
-    out.e20 = num_t(0.0);
-    out.e21 = num_t(0.0);
-
-    return out;
-}
-
-mat2x3_t mat2x3(num_t e00, num_t e01, num_t e10, num_t e11, num_t e20, num_t e21) {
-    mat2x3_t out;
-
-    out.e00 = e00;
-    out.e01 = e01;
-    out.e10 = e10;
-    out.e11 = e11;
-    out.e20 = e20;
-    out.e21 = e21;
-
-    return out;
-}
-
-void mat2x3_set(mat2x3_t& out, num_t e00, num_t e01, num_t e10, num_t e11, num_t e20, num_t e21) {
-    out.e00 = e00;
-    out.e01 = e01;
-    out.e10 = e10;
-    out.e11 = e11;
-    out.e20 = e20;
-    out.e21 = e21;
-}
-
-void mat2x3_copy(mat2x3_t& out, const mat2x3_t& m) {
-    out.e00 = m.e00;
-    out.e01 = m.e01;
-    out.e10 = m.e10;
-    out.e11 = m.e11;
-    out.e20 = m.e20;
-    out.e21 = m.e21;
-}
-
-mat2x3_t mat2x3n_copy(const mat2x3_t& m) {
-    mat2x3_t out;
-
-    mat2x3_copy(out, m);
-
-    return out;
-}
-
-// unary
-void mat2x3_zero(mat2x3_t& out) {
-    out.e00 = num_t(0.0);
-    out.e01 = num_t(0.0);
-    out.e10 = num_t(0.0);
-    out.e11 = num_t(0.0);
-    out.e20 = num_t(0.0);
-    out.e21 = num_t(0.0);
-}
-
-mat2x3_t mat2x3n_zero() {
-    mat2x3_t out;
-
-    mat2x3_zero(out);
-
-    return out;
-}
-
-void mat2x3_ident(mat2x3_t& out) {
-    out.e00 = num_t(1.0);
-    out.e01 = num_t(0.0);
-    out.e10 = num_t(0.0);
-    out.e11 = num_t(1.0);
-    out.e20 = num_t(0.0);
-    out.e21 = num_t(0.0);
-}
-
-mat2x3_t mat2x3n_ident() {
-    mat2x3_t out;
-
-    mat2x3_ident(out);
-
-    return out;
-}
+#include "mat2x3_t.cpp"
+#include "mat2x3_affine.cpp"
 
 // arithmetic matrix x matrix
 void mat2x3_add(mat2x3_t& out, const mat2x3_t& m0, const mat2x3_t& m1) {
@@ -205,6 +120,26 @@ mat2x3_t mat2x3n_mul(const mat2x3_t& m0, const mat2x3_t& m1) {
 
 void mat2x3m_mul(mat2x3_t& out, const mat2x3_t& m) {
     mat2x3_mul(out, out, m);
+}
+
+// product matrix x vector
+void mat2x3_mulmv(vec2_t& out, const vec2_t& v, const mat2x3_t& m) {
+    num_t x = v.x, y = v.y;
+
+    out.x = x * m.e00 + y * m.e10 + m.e20;
+    out.y = x * m.e01 + y * m.e11 + m.e21;
+}
+
+vec2_t mat2x3n_mulmv(const vec2_t& v, const mat2x3_t& m) {
+    vec2_t out;
+
+    mat2x3_mulmv(out, v, m);
+
+    return out;
+}
+
+void mat2x3m_mulmv(vec2_t& out, const mat2x3_t& m) {
+    mat2x3_mulmv(out, out, m);
 }
 
 // special

@@ -3,57 +3,12 @@
 
 #include "vec2.h"
 
-// creation
-vec2_t vec2(num_t x) {
-    vec2_t out;
-
-    out.x = x;
-    out.y = x;
-
-    return out;
-}
-
-vec2_t vec2(num_t x, num_t y) {
-    vec2_t out;
-
-    out.x = x;
-    out.y = y;
-
-    return out;
-}
-
-void vec2_set(vec2_t& out, num_t x, num_t y) {
-    out.x = x;
-    out.y = y;
-}
-
-void vec2_copy(vec2_t& out, const vec2_t& v) {
-    out.x = v.x;
-    out.y = v.y;
-}
-
-vec2_t vec2n_copy(const vec2_t& v) {
-    vec2_t out;
-
-    vec2_copy(out, v);
-
-    return out;
-}
+#include "vec2_t.cpp"
+#include "vec2_arithm.cpp"
+#include "vec2_other.cpp"
+#include "vec2_rand.cpp"
 
 // unary
-void vec2_zero(vec2_t& out) {
-    out.x = num_t(0.0);
-    out.y = num_t(0.0);
-}
-
-vec2_t vec2n_zero() {
-    vec2_t out;
-
-    vec2_zero(out);
-
-    return out;
-}
-
 void vec2_abs(vec2_t& out, const vec2_t& v) {
     out.x = abs(v.x);
     out.y = abs(v.y);
@@ -103,162 +58,6 @@ vec2_t vec2n_inv(const vec2_t& v) {
 
 void vec2m_inv(vec2_t& out) {
     vec2_inv(out, out);
-}
-
-// arithmetic vector x vector
-void vec2_add(vec2_t& out, const vec2_t& v0, const vec2_t& v1) {
-    out.x = v0.x + v1.x;
-    out.y = v0.y + v1.y;
-}
-
-vec2_t vec2n_add(const vec2_t& v0, const vec2_t& v1) {
-    vec2_t out;
-
-    vec2_add(out, v0, v1);
-
-    return out;
-}
-
-void vec2m_add(vec2_t& out, const vec2_t& v) {
-    vec2_add(out, out, v);
-}
-
-void vec2_sub(vec2_t& out, const vec2_t& v0, const vec2_t& v1) {
-    out.x = v0.x - v1.x;
-    out.y = v0.y - v1.y;
-}
-
-vec2_t vec2n_sub(const vec2_t& v0, const vec2_t& v1) {
-    vec2_t out;
-
-    vec2_sub(out, v0, v1);
-
-    return out;
-}
-
-void vec2m_sub(vec2_t& out, const vec2_t& v) {
-    vec2_sub(out, out, v);
-}
-
-void vec2_mul(vec2_t& out, const vec2_t& v0, const vec2_t& v1) {
-    out.x = v0.x * v1.x;
-    out.y = v0.y * v1.y;
-}
-
-vec2_t vec2n_mul(const vec2_t& v0, const vec2_t& v1) {
-    vec2_t out;
-
-    vec2_mul(out, v0, v1);
-
-    return out;
-}
-
-void vec2m_mul(vec2_t& out, const vec2_t& v) {
-    vec2_mul(out, out, v);
-}
-
-void vec2_div(vec2_t& out, const vec2_t& v0, const vec2_t& v1) {
-    out.x = v0.x / v1.x;
-    out.y = v0.y / v1.y;
-}
-
-vec2_t vec2n_div(const vec2_t& v0, const vec2_t& v1) {
-    vec2_t out;
-
-    vec2_div(out, v0, v1);
-
-    return out;
-}
-
-void vec2m_div(vec2_t& out, const vec2_t& v) {
-    vec2_div(out, out, v);
-}
-
-// arithmetic vector x scalar
-void vec2_adds(vec2_t& out, const vec2_t& v, num_t s) {
-    out.x = v.x + s;
-    out.y = v.y + s;
-}
-
-vec2_t vec2n_adds(const vec2_t& v, num_t s) {
-    vec2_t out;
-
-    vec2_adds(out, v, s);
-
-    return out;
-}
-
-void vec2m_adds(vec2_t& out, num_t s) {
-    vec2_adds(out, out, s);
-}
-
-void vec2_subs(vec2_t& out, const vec2_t& v, num_t s) {
-    out.x = v.x - s;
-    out.y = v.y - s;
-}
-
-vec2_t vec2n_subs(const vec2_t& v, num_t s) {
-    vec2_t out;
-
-    vec2_subs(out, v, s);
-
-    return out;
-}
-
-void vec2m_subs(vec2_t& out, num_t s) {
-    vec2_subs(out, out, s);
-}
-
-void vec2_muls(vec2_t& out, const vec2_t& v, num_t s) {
-    out.x = v.x - s;
-    out.y = v.y - s;
-}
-
-vec2_t vec2n_muls(const vec2_t& v, num_t s) {
-    vec2_t out;
-
-    vec2_muls(out, v, s);
-
-    return out;
-}
-
-void vec2m_muls(vec2_t& out, num_t s) {
-    vec2_muls(out, out, s);
-}
-
-void vec2_divs(vec2_t& out, const vec2_t& v, num_t s) {
-    out.x = v.x - s;
-    out.y = v.y - s;
-}
-
-vec2_t vec2n_divs(const vec2_t& v, num_t s) {
-    vec2_t out;
-
-    vec2_divs(out, v, s);
-
-    return out;
-}
-
-void vec2m_divs(vec2_t& out, num_t s) {
-    vec2_divs(out, out, s);
-}
-
-// arithmetic vector x vector x scalar
-void vec2_addmuls(vec2_t& out, const vec2_t& v0, const vec2_t& v1, num_t s) {
-    out.x = v0.x + v1.x * s;
-    out.y = v0.y + v1.y * s;
-}
-
-vec2_t vec2n_addmuls(const vec2_t& v0, const vec2_t& v1, num_t s) {
-    vec2_t out;
-
-    vec2_addmuls(out, v0, v1, s);
-
-    return out;
-}
-
-void vec2m_addmuls(vec2_t& out, const vec2_t& v, num_t s) {
-    vec2_addmuls(out, out, v, s);
 }
 
 // product
@@ -454,7 +253,7 @@ num_t vec2_angle2(const vec2_t& v0, const vec2_t& v1) {
 
 // string
 void vec2_str(const vec2_t& v, char* str) {
-    sprintf(str, "vec2(%f, %f)", v.x, v.y);
+    sprintf(str, "vec2(%f, %f)", num_t(v.x), num_t(v.y));
 }
 
 void vec2_print(const vec2_t& v) {
@@ -463,85 +262,4 @@ void vec2_print(const vec2_t& v) {
     vec2_str(v, str);
 
     printf("%s\n", str);
-}
-
-// operator overloading
-vec2_t operator+(const vec2_t& v0, const vec2_t& v1) {
-    return vec2n_add(v0, v1);
-}
-
-vec2_t& operator+=(vec2_t& out, const vec2_t& v) {
-    vec2m_add(out, v);
-
-    return out;
-}
-
-vec2_t operator-(const vec2_t& v0, const vec2_t& v1) {
-    return vec2n_sub(v0, v1);
-}
-
-vec2_t& operator-=(vec2_t& out, const vec2_t& v) {
-    vec2m_sub(out, v);
-
-    return out;
-}
-
-vec2_t operator*(const vec2_t& v0, const vec2_t& v1) {
-    return vec2n_mul(v0, v1);
-}
-
-vec2_t& operator*=(vec2_t& out, const vec2_t& v) {
-    vec2m_mul(out, v);
-
-    return out;
-}
-
-vec2_t operator/(const vec2_t& v0, const vec2_t& v1) {
-    return vec2n_div(v0, v1);
-}
-
-vec2_t& operator/=(vec2_t& out, const vec2_t& v) {
-    vec2m_div(out, v);
-
-    return out;
-}
-
-vec2_t operator+(const vec2_t& v, num_t s) {
-    return vec2n_adds(v, s);
-}
-
-vec2_t& operator+=(vec2_t& out, num_t s) {
-    vec2m_adds(out, s);
-
-    return out;
-}
-
-vec2_t operator-(const vec2_t& v, num_t s) {
-    return vec2n_subs(v, s);
-}
-
-vec2_t& operator-=(vec2_t& out, num_t s) {
-    vec2m_subs(out, s);
-
-    return out;
-}
-
-vec2_t operator*(const vec2_t& v, num_t s) {
-    return vec2n_muls(v, s);
-}
-
-vec2_t& operator*=(vec2_t& out, num_t s) {
-    vec2m_muls(out, s);
-
-    return out;
-}
-
-vec2_t operator/(const vec2_t& v, num_t s) {
-    return vec2n_divs(v, s);
-}
-
-vec2_t& operator/=(vec2_t& out, num_t s) {
-    vec2m_divs(out, s);
-
-    return out;
 }

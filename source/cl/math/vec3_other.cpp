@@ -75,6 +75,24 @@ void vec3m_round(vec3_t& out) {
     vec3_round(out, out);
 }
 
+void vec3_snap(vec3_t& out, const vec3_t& v, const vec3_t c) {
+    out.x = round(v.x / c.x) * c.x;
+    out.y = round(v.y / c.y) * c.y;
+    out.z = round(v.z / c.z) * c.z;
+}
+
+vec3_t vec3n_snap(const vec3_t& v, const vec3_t c) {
+    vec3_t out;
+
+    vec3_snap(out, v, c);
+
+    return out;
+}
+
+void vec3m_snap(vec3_t& out, const vec3_t c) {
+    vec3_snap(out, out, c);
+}
+
 // bounding
 void vec3_min(vec3_t& out, const vec3_t& v0, const vec3_t& v1) {
     out.x = min(v0.x, v1.x);

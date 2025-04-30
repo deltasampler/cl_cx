@@ -1,9 +1,18 @@
-#pragma once
+#ifndef MAT3_T
+#define MAT3_T
 
 #include <cl/type.h>
 
-#define mat3_t fmat3_t
-#define num_t f32
+#ifndef num_t
+    #define num_t f32
+#endif
+
+#ifndef pre
+    #define pre(name) f##name
+#endif
+
+#undef mat3_t
+#define mat3_t pre(mat3_t)
 
 struct mat3_t {
     union {
@@ -20,3 +29,20 @@ struct mat3_t {
         num_t arr[9];
     };
 };
+
+// creation
+mat3_t mat3(num_t x = num_t(1.0));
+mat3_t mat3(num_t e00, num_t e01, num_t e02, num_t e10, num_t e11, num_t e12, num_t e20, num_t e21, num_t e22);
+
+void mat3_zero(mat3_t& out);
+mat3_t mat3n_zero();
+
+void mat3_ident(mat3_t& out);
+mat3_t mat3n_ident();
+
+void mat3_set(mat3_t& out, num_t e00, num_t e01, num_t e02, num_t e10, num_t e11, num_t e12, num_t e20, num_t e21, num_t e22);
+
+void mat3_copy(mat3_t& out, const mat3_t& m);
+mat3_t mat3n_copy(const mat3_t& m);
+
+#endif

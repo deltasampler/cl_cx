@@ -1,9 +1,18 @@
-#pragma once
+#ifndef MAT4_T
+#define MAT4_T
 
 #include <cl/type.h>
 
-#define mat4_t fmat4_t
-#define num_t f32
+#ifndef num_t
+    #define num_t f32
+#endif
+
+#ifndef pre
+    #define pre(name) f##name
+#endif
+
+#undef mat4_t
+#define mat4_t pre(mat4_t)
 
 struct mat4_t {
     union {
@@ -22,3 +31,20 @@ struct mat4_t {
         num_t arr[16];
     };
 };
+
+// creation
+mat4_t mat4(num_t x = num_t(1.0));
+mat4_t mat4(num_t e00, num_t e01, num_t e02, num_t e03, num_t e10, num_t e11, num_t e12, num_t e13, num_t e20, num_t e21, num_t e22, num_t e23, num_t e30, num_t e31, num_t e32, num_t e33);
+
+void mat4_zero(mat4_t& out);
+mat4_t mat4n_zero();
+
+void mat4_ident(mat4_t& out);
+mat4_t mat4n_ident();
+
+void mat4_set(mat4_t& out, num_t e00, num_t e01, num_t e02, num_t e03, num_t e10, num_t e11, num_t e12, num_t e13, num_t e20, num_t e21, num_t e22, num_t e23, num_t e30, num_t e31, num_t e32, num_t e33);
+
+void mat4_copy(mat4_t& out, const mat4_t& m);
+mat4_t mat4n_copy(const mat4_t& m);
+
+#endif

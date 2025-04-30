@@ -1,9 +1,18 @@
-#pragma once
+#ifndef VEC3_T
+#define VEC3_T
 
 #include <cl/type.h>
 
-#define vec3_t fvec3_t
-#define num_t f32
+#ifndef num_t
+    #define num_t f32
+#endif
+
+#ifndef pre
+    #define pre(name) f##name
+#endif
+
+#undef vec3_t
+#define vec3_t pre(vec3_t)
 
 struct vec3_t {
     union {
@@ -15,3 +24,16 @@ struct vec3_t {
         num_t arr[3];
     };
 };
+
+vec3_t vec3(num_t x = num_t(0.0));
+vec3_t vec3(num_t x, num_t y, num_t z);
+
+void vec3_zero(vec3_t& out);
+vec3_t pre(vec3n_zero)();
+
+void vec3_set(vec3_t& out, num_t x, num_t y, num_t z);
+
+void vec3_copy(vec3_t& out, const vec3_t& v);
+vec3_t vec3n_copy(const vec3_t& v);
+
+#endif
