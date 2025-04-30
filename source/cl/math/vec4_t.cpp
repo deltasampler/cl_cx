@@ -24,10 +24,10 @@ vec4_t vec4(num_t x, num_t y, num_t z, num_t w) {
 }
 
 void vec4_zero(vec4_t& out) {
-    out.x = num_t(0.0);
-    out.y = num_t(0.0);
-    out.z = num_t(0.0);
-    out.w = num_t(0.0);
+    out.x = num_t(0);
+    out.y = num_t(0);
+    out.z = num_t(0);
+    out.w = num_t(0);
 }
 
 vec4_t vec4n_zero() {

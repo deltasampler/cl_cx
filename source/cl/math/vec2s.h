@@ -10,6 +10,7 @@
 
 #undef VEC2_T
 #include "vec2_t.h"
+#undef VEC2_ARITHM
 #include "vec2_arithm.h"
 
 // string

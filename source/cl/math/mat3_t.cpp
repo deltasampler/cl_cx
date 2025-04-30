@@ -5,13 +5,13 @@ mat3_t mat3(num_t x) {
     mat3_t out;
 
     out.e00 = x;
-    out.e01 = num_t(0.0);
-    out.e02 = num_t(0.0);
-    out.e10 = num_t(0.0);
+    out.e01 = num_t(0);
+    out.e02 = num_t(0);
+    out.e10 = num_t(0);
     out.e11 = x;
-    out.e12 = num_t(0.0);
-    out.e20 = num_t(0.0);
-    out.e21 = num_t(0.0);
+    out.e12 = num_t(0);
+    out.e20 = num_t(0);
+    out.e21 = num_t(0);
     out.e22 = x;
 
     return out;
@@ -34,18 +34,18 @@ mat3_t mat3(num_t e00, num_t e01, num_t e02, num_t e10, num_t e11, num_t e12, nu
 }
 
 void mat3_zero(mat3_t& out) {
-    out.e00 = num_t(0.0);
-    out.e01 = num_t(0.0);
-    out.e02 = num_t(0.0);
-    out.e10 = num_t(0.0);
-    out.e11 = num_t(0.0);
-    out.e12 = num_t(0.0);
-    out.e20 = num_t(0.0);
-    out.e21 = num_t(0.0);
-    out.e22 = num_t(0.0);
+    out.e00 = num_t(0);
+    out.e01 = num_t(0);
+    out.e02 = num_t(0);
+    out.e10 = num_t(0);
+    out.e11 = num_t(0);
+    out.e12 = num_t(0);
+    out.e20 = num_t(0);
+    out.e21 = num_t(0);
+    out.e22 = num_t(0);
 }
 
-mat3_t mat3n_zero() {
+mat3_t pre(mat3n_zero)() {
     mat3_t out;
 
     mat3_zero(out);
@@ -54,18 +54,18 @@ mat3_t mat3n_zero() {
 }
 
 void mat3_ident(mat3_t& out) {
-    out.e00 = num_t(1.0);
-    out.e01 = num_t(0.0);
-    out.e02 = num_t(0.0);
-    out.e10 = num_t(0.0);
-    out.e11 = num_t(1.0);
-    out.e12 = num_t(0.0);
-    out.e20 = num_t(0.0);
-    out.e21 = num_t(0.0);
-    out.e22 = num_t(1.0);
+    out.e00 = num_t(1);
+    out.e01 = num_t(0);
+    out.e02 = num_t(0);
+    out.e10 = num_t(0);
+    out.e11 = num_t(1);
+    out.e12 = num_t(0);
+    out.e20 = num_t(0);
+    out.e21 = num_t(0);
+    out.e22 = num_t(1);
 }
 
-mat3_t mat3n_ident() {
+mat3_t pre(mat3n_ident)() {
     mat3_t out;
 
     mat3_ident(out);

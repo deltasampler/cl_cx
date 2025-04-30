@@ -2,7 +2,7 @@
 
 #include "vec4_t.h"
 
-// arithmetic vector x vector
+// arithmetic - vector x vector
 void vec4_add(vec4_t& out, const vec4_t& v0, const vec4_t& v1);
 vec4_t vec4n_add(const vec4_t& v0, const vec4_t& v1);
 void vec4m_add(vec4_t& out, const vec4_t& v);
@@ -19,7 +19,7 @@ void vec4_div(vec4_t& out, const vec4_t& v0, const vec4_t& v1);
 vec4_t vec4n_div(const vec4_t& v0, const vec4_t& v1);
 void vec4m_div(vec4_t& out, const vec4_t& v);
 
-// arithmetic vector x scalar
+// arithmetic - vector x scalar
 void vec4_adds(vec4_t& out, const vec4_t& v, num_t s);
 vec4_t vec4n_adds(const vec4_t& v, num_t s);
 void vec4m_adds(vec4_t& out, num_t s);
@@ -36,7 +36,7 @@ void vec4_divs(vec4_t& out, const vec4_t& v, num_t s);
 vec4_t vec4n_divs(const vec4_t& v, num_t s);
 void vec4m_divs(vec4_t& out, num_t s);
 
-// arithmetic vector x vector x scalar
+// arithmetic - vector x vector x scalar
 void vec4_addmuls(vec4_t& out, const vec4_t& v0, const vec4_t& v1, num_t s);
 vec4_t vec4n_addmuls(const vec4_t& v0, const vec4_t& v1, num_t s);
 void vec4m_addmuls(vec4_t& out, const vec4_t& v, num_t s);

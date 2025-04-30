@@ -5,8 +5,8 @@ mat2_t mat2(num_t x) {
     mat2_t out;
 
     out.e00 = x;
-    out.e01 = num_t(0.0);
-    out.e10 = num_t(0.0);
+    out.e01 = num_t(0);
+    out.e10 = num_t(0);
     out.e11 = x;
 
     return out;
@@ -24,13 +24,13 @@ mat2_t mat2(num_t e00, num_t e01, num_t e10, num_t e11) {
 }
 
 void mat2_zero(mat2_t& out) {
-    out.e00 = num_t(0.0);
-    out.e01 = num_t(0.0);
-    out.e10 = num_t(0.0);
-    out.e11 = num_t(0.0);
+    out.e00 = num_t(0);
+    out.e01 = num_t(0);
+    out.e10 = num_t(0);
+    out.e11 = num_t(0);
 }
 
-mat2_t mat2n_zero() {
+mat2_t pre(mat2n_zero)() {
     mat2_t out;
 
     mat2_zero(out);
@@ -39,13 +39,13 @@ mat2_t mat2n_zero() {
 }
 
 void mat2_ident(mat2_t& out) {
-    out.e00 = num_t(1.0);
-    out.e01 = num_t(0.0);
-    out.e10 = num_t(0.0);
-    out.e11 = num_t(1.0);
+    out.e00 = num_t(1);
+    out.e01 = num_t(0);
+    out.e10 = num_t(0);
+    out.e11 = num_t(1);
 }
 
-mat2_t mat2n_ident() {
+mat2_t pre(mat2n_ident)() {
     mat2_t out;
 
     mat2_ident(out);

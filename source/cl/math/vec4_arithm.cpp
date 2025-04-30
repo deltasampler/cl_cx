@@ -1,6 +1,6 @@
 #include "vec4_arithm.h"
 
-// arithmetic vector x vector
+// arithmetic - vector x vector
 void vec4_add(vec4_t& out, const vec4_t& v0, const vec4_t& v1) {
     out.x = v0.x + v1.x;
     out.y = v0.y + v1.y;
@@ -77,7 +77,7 @@ void vec4m_div(vec4_t& out, const vec4_t& v) {
     vec4_div(out, out, v);
 }
 
-// arithmetic vector x scalar
+// arithmetic - vector x scalar
 void vec4_adds(vec4_t& out, const vec4_t& v, num_t s) {
     out.x = v.x + s;
     out.y = v.y + s;
@@ -154,7 +154,7 @@ void vec4m_divs(vec4_t& out, num_t s) {
     vec4_divs(out, out, s);
 }
 
-// arithmetic vector x vector x scalar
+// arithmetic - vector x vector x scalar
 void vec4_addmuls(vec4_t& out, const vec4_t& v0, const vec4_t& v1, num_t s) {
     out.x = v0.x + v1.x * s;
     out.y = v0.y + v1.y * s;

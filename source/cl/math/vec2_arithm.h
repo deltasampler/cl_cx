@@ -1,4 +1,5 @@
-#pragma once
+#ifndef VEC2_ARITHM
+#define VEC2_ARITHM
 
 #include "vec2_t.h"
 
@@ -41,7 +42,7 @@ void vec2_addmuls(vec2_t& out, const vec2_t& v0, const vec2_t& v1, num_t s);
 vec2_t vec2n_addmuls(const vec2_t& v0, const vec2_t& v1, num_t s);
 void vec2m_addmuls(vec2_t& out, const vec2_t& v, num_t s);
 
-// arithmetic operator overloading - vector x vector
+// arithmetic - operator overloading - vector x vector
 vec2_t operator+(const vec2_t& v0, const vec2_t& v1);
 vec2_t& operator+=(vec2_t& out, const vec2_t& v);
 
@@ -54,7 +55,7 @@ vec2_t& operator*=(vec2_t& out, const vec2_t& v);
 vec2_t operator/(const vec2_t& v0, const vec2_t& v1);
 vec2_t& operator/=(vec2_t& out, const vec2_t& v);
 
-// arithmetic operator overloading - vector x scalar
+// arithmetic - operator overloading - vector x scalar
 vec2_t operator+(const vec2_t& v, num_t s);
 vec2_t& operator+=(vec2_t& out, num_t s);
 
@@ -66,3 +67,5 @@ vec2_t& operator*=(vec2_t& out, num_t s);
 
 vec2_t operator/(const vec2_t& v, num_t s);
 vec2_t& operator/=(vec2_t& out, num_t s);
+
+#endif

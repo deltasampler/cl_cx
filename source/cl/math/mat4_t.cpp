@@ -5,20 +5,20 @@ mat4_t mat4(num_t x) {
     mat4_t out;
 
     out.e00 = x;
-    out.e01 = num_t(0.0);
-    out.e02 = num_t(0.0);
-    out.e03 = num_t(0.0);
-    out.e10 = num_t(0.0);
+    out.e01 = num_t(0);
+    out.e02 = num_t(0);
+    out.e03 = num_t(0);
+    out.e10 = num_t(0);
     out.e11 = x;
-    out.e12 = num_t(0.0);
-    out.e13 = num_t(0.0);
-    out.e20 = num_t(0.0);
-    out.e21 = num_t(0.0);
+    out.e12 = num_t(0);
+    out.e13 = num_t(0);
+    out.e20 = num_t(0);
+    out.e21 = num_t(0);
     out.e22 = x;
-    out.e23 = num_t(0.0);
-    out.e30 = num_t(0.0);
-    out.e31 = num_t(0.0);
-    out.e32 = num_t(0.0);
+    out.e23 = num_t(0);
+    out.e30 = num_t(0);
+    out.e31 = num_t(0);
+    out.e32 = num_t(0);
     out.e33 = x;
 
     return out;
@@ -48,24 +48,24 @@ mat4_t mat4(num_t e00, num_t e01, num_t e02, num_t e03, num_t e10, num_t e11, nu
 }
 
 void mat4_zero(mat4_t& out) {
-    out.e00 = num_t(0.0);
-    out.e01 = num_t(0.0);
-    out.e02 = num_t(0.0);
-    out.e03 = num_t(0.0);
-    out.e10 = num_t(0.0);
-    out.e11 = num_t(0.0);
-    out.e13 = num_t(0.0);
-    out.e20 = num_t(0.0);
-    out.e21 = num_t(0.0);
-    out.e22 = num_t(0.0);
-    out.e23 = num_t(0.0);
-    out.e30 = num_t(0.0);
-    out.e31 = num_t(0.0);
-    out.e32 = num_t(0.0);
-    out.e33 = num_t(0.0);
+    out.e00 = num_t(0);
+    out.e01 = num_t(0);
+    out.e02 = num_t(0);
+    out.e03 = num_t(0);
+    out.e10 = num_t(0);
+    out.e11 = num_t(0);
+    out.e13 = num_t(0);
+    out.e20 = num_t(0);
+    out.e21 = num_t(0);
+    out.e22 = num_t(0);
+    out.e23 = num_t(0);
+    out.e30 = num_t(0);
+    out.e31 = num_t(0);
+    out.e32 = num_t(0);
+    out.e33 = num_t(0);
 }
 
-mat4_t mat4n_zero() {
+mat4_t pre(mat4n_zero)() {
     mat4_t out;
 
     mat4_zero(out);
@@ -74,25 +74,25 @@ mat4_t mat4n_zero() {
 }
 
 void mat4_ident(mat4_t& out) {
-    out.e00 = num_t(1.0);
-    out.e01 = num_t(0.0);
-    out.e02 = num_t(0.0);
-    out.e03 = num_t(0.0);
-    out.e10 = num_t(0.0);
-    out.e11 = num_t(1.0);
-    out.e12 = num_t(0.0);
-    out.e13 = num_t(0.0);
-    out.e20 = num_t(0.0);
-    out.e21 = num_t(0.0);
-    out.e22 = num_t(1.0);
-    out.e23 = num_t(0.0);
-    out.e30 = num_t(0.0);
-    out.e31 = num_t(0.0);
-    out.e32 = num_t(0.0);
-    out.e33 = num_t(1.0);
+    out.e00 = num_t(1);
+    out.e01 = num_t(0);
+    out.e02 = num_t(0);
+    out.e03 = num_t(0);
+    out.e10 = num_t(0);
+    out.e11 = num_t(1);
+    out.e12 = num_t(0);
+    out.e13 = num_t(0);
+    out.e20 = num_t(0);
+    out.e21 = num_t(0);
+    out.e22 = num_t(1);
+    out.e23 = num_t(0);
+    out.e30 = num_t(0);
+    out.e31 = num_t(0);
+    out.e32 = num_t(0);
+    out.e33 = num_t(1);
 }
 
-mat4_t mat4n_ident() {
+mat4_t pre(mat4n_ident)() {
     mat4_t out;
 
     mat4_ident(out);

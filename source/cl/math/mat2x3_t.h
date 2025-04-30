@@ -31,14 +31,14 @@ struct mat2x3_t {
 };
 
 // creation
-mat2x3_t mat2x3(num_t x = num_t(1.0));
+mat2x3_t mat2x3(num_t x = num_t(1));
 mat2x3_t mat2x3(num_t e00, num_t e01, num_t e10, num_t e11, num_t e20, num_t e21);
 
 void mat2x3_zero(mat2x3_t& out);
-mat2x3_t mat2x3n_zero();
+mat2x3_t pre(mat2x3n_zero)();
 
 void mat2x3_ident(mat2x3_t& out);
-mat2x3_t mat2x3n_ident();
+mat2x3_t pre(mat2x3n_ident)();
 
 void mat2x3_set(mat2x3_t& out, num_t e00, num_t e01, num_t e10, num_t e11);
 

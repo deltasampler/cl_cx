@@ -19,8 +19,8 @@ vec2_t vec2(num_t x, num_t y) {
 }
 
 void vec2_zero(vec2_t& out) {
-    out.x = num_t(0.0);
-    out.y = num_t(0.0);
+    out.x = num_t(0);
+    out.y = num_t(0);
 }
 
 vec2_t pre(vec2n_zero)() {

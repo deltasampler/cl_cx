@@ -41,7 +41,7 @@ void vec3_addmuls(vec3_t& out, const vec3_t& v0, const vec3_t& v1, num_t s);
 vec3_t vec3n_addmuls(const vec3_t& v0, const vec3_t& v1, num_t s);
 void vec3m_addmuls(vec3_t& out, const vec3_t& v, num_t s);
 
-// arithmetic operator overloading - vector x vector
+// arithmetic - operator overloading - vector x vector
 vec3_t operator+(const vec3_t& v0, const vec3_t& v1);
 vec3_t& operator+=(vec3_t& out, const vec3_t& v);
 
@@ -54,7 +54,7 @@ vec3_t& operator*=(vec3_t& out, const vec3_t& v);
 vec3_t operator/(const vec3_t& v0, const vec3_t& v1);
 vec3_t& operator/=(vec3_t& out, const vec3_t& v);
 
-// arithmetic operator overloading - vector x scalar
+// arithmetic - operator overloading - vector x scalar
 vec3_t operator+(const vec3_t& v, num_t s);
 vec3_t& operator+=(vec3_t& out, num_t s);
 

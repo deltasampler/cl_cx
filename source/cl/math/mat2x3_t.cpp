@@ -5,11 +5,11 @@ mat2x3_t mat2x3(num_t x) {
     mat2x3_t out;
 
     out.e00 = x;
-    out.e01 = num_t(0.0);
-    out.e10 = num_t(0.0);
+    out.e01 = num_t(0);
+    out.e10 = num_t(0);
     out.e11 = x;
-    out.e20 = num_t(0.0);
-    out.e21 = num_t(0.0);
+    out.e20 = num_t(0);
+    out.e21 = num_t(0);
 
     return out;
 }
@@ -28,15 +28,15 @@ mat2x3_t mat2x3(num_t e00, num_t e01, num_t e10, num_t e11, num_t e20, num_t e21
 }
 
 void mat2x3_zero(mat2x3_t& out) {
-    out.e00 = num_t(0.0);
-    out.e01 = num_t(0.0);
-    out.e10 = num_t(0.0);
-    out.e11 = num_t(0.0);
-    out.e20 = num_t(0.0);
-    out.e21 = num_t(0.0);
+    out.e00 = num_t(0);
+    out.e01 = num_t(0);
+    out.e10 = num_t(0);
+    out.e11 = num_t(0);
+    out.e20 = num_t(0);
+    out.e21 = num_t(0);
 }
 
-mat2x3_t mat2x3n_zero() {
+mat2x3_t pre(mat2x3n_zero)() {
     mat2x3_t out;
 
     mat2x3_zero(out);
@@ -45,15 +45,15 @@ mat2x3_t mat2x3n_zero() {
 }
 
 void mat2x3_ident(mat2x3_t& out) {
-    out.e00 = num_t(1.0);
-    out.e01 = num_t(0.0);
-    out.e10 = num_t(0.0);
-    out.e11 = num_t(1.0);
-    out.e20 = num_t(0.0);
-    out.e21 = num_t(0.0);
+    out.e00 = num_t(1);
+    out.e01 = num_t(0);
+    out.e10 = num_t(0);
+    out.e11 = num_t(1);
+    out.e20 = num_t(0);
+    out.e21 = num_t(0);
 }
 
-mat2x3_t mat2x3n_ident() {
+mat2x3_t pre(mat2x3n_ident)() {
     mat2x3_t out;
 
     mat2x3_ident(out);

@@ -156,7 +156,7 @@ void vec2m_addmuls(vec2_t& out, const vec2_t& v, num_t s) {
     vec2_addmuls(out, out, v, s);
 }
 
-// arithmetic operator overloading - vector x vector
+// arithmetic - operator overloading - vector x vector
 vec2_t operator+(const vec2_t& v0, const vec2_t& v1) {
     return vec2n_add(v0, v1);
 }
@@ -197,7 +197,7 @@ vec2_t& operator/=(vec2_t& out, const vec2_t& v) {
     return out;
 }
 
-// arithmetic operator overloading - vector x scalar
+// arithmetic - operator overloading - vector x scalar
 vec2_t operator+(const vec2_t& v, num_t s) {
     return vec2n_adds(v, s);
 }

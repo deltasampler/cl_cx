@@ -73,7 +73,7 @@ void vec3m_div(vec3_t& out, const vec3_t& v) {
     vec3_div(out, out, v);
 }
 
-// arithmetic  vector x scalar
+// arithmetic -  vector x scalar
 void vec3_adds(vec3_t& out, const vec3_t& v, num_t s) {
     out.x = v.x + s;
     out.y = v.y + s;
@@ -165,7 +165,7 @@ void vec3m_addmuls(vec3_t& out, const vec3_t& v, num_t s) {
     vec3_addmuls(out, out, v, s);
 }
 
-// arithmetic operator overloading - vector x vector
+// arithmetic - operator overloading - vector x vector
 vec3_t operator+(const vec3_t& v0, const vec3_t& v1) {
     return vec3n_add(v0, v1);
 }
@@ -206,7 +206,7 @@ vec3_t& operator/=(vec3_t& out, const vec3_t& v) {
     return out;
 }
 
-// arithmetic operator overloading - vector x scalar
+// arithmetic - operator overloading - vector x scalar
 vec3_t operator+(const vec3_t& v, num_t s) {
     return vec3n_adds(v, s);
 }

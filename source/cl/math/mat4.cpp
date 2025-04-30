@@ -8,7 +8,7 @@
 #include "mat4_proj.cpp"
 #include "mat4_cam.cpp"
 
-// arithmetic matrix x matrix
+// arithmetic - matrix x matrix
 void mat4_add(mat4_t& out, const mat4_t& m0, const mat4_t& m1) {
     out.e00 = m0.e00 + m1.e00;
     out.e01 = m0.e01 + m1.e01;
@@ -71,7 +71,7 @@ void mat4m_sub(mat4_t& out, const mat4_t& m) {
     mat4_sub(out, out, m);
 }
 
-// arithmetic matrix x scalar
+// arithmetic - matrix x scalar
 void mat4_muls(mat4_t& out, const mat4_t& m, num_t s) {
     out.e00 = m.e00 * s;
     out.e01 = m.e01 * s;
@@ -103,7 +103,7 @@ void mat4m_muls(mat4_t& out, num_t s) {
     mat4_muls(out, out, s);
 }
 
-// arithmetic matrix x matrix x scalar
+// arithmetic - matrix x matrix x scalar
 void mat4_addmuls(mat4_t& out, const mat4_t& m0, const mat4_t& m1, num_t s) {
     out.e00 = m0.e00 + m1.e00 * s;
     out.e01 = m0.e01 + m1.e01 * s;

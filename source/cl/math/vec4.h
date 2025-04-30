@@ -1,5 +1,11 @@
 #pragma once
 
+#undef num_t
+#define num_t f32
+
+#undef pre
+#define pre(name) f##name
+
 #undef VEC4_T
 #include "vec4_t.h"
 #include "vec4_arithm.h"

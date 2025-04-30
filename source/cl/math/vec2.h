@@ -1,7 +1,14 @@
 #pragma once
 
+#undef num_t
+#define num_t f32
+
+#undef pre
+#define pre(name) f##name
+
 #undef VEC2_T
 #include "vec2_t.h"
+#undef VEC2_ARITHM
 #include "vec2_arithm.h"
 
 // unary

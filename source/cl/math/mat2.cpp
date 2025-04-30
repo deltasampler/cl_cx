@@ -6,7 +6,7 @@
 #include "mat2_t.cpp"
 #include "mat2_affine.cpp"
 
-// arithmetic matrix x matrix
+// arithmetic - matrix x matrix
 void mat2_add(mat2_t& out, const mat2_t& m0, const mat2_t& m1) {
     out.e00 = m0.e00 + m1.e00;
     out.e01 = m0.e01 + m1.e01;
@@ -45,7 +45,7 @@ void mat2m_sub(mat2_t& out, const mat2_t& m) {
     mat2_sub(out, out, m);
 }
 
-// arithmetic matrix x scalar
+// arithmetic - matrix x scalar
 void mat2_muls(mat2_t& out, const mat2_t& m, num_t s) {
     out.e00 = m.e00 * s;
     out.e01 = m.e01 * s;
@@ -65,7 +65,7 @@ void mat2m_muls(mat2_t& out, num_t s) {
     mat2_muls(out, out, s);
 }
 
-// arithmetic matrix x matrix x scalar
+// arithmetic - matrix x matrix x scalar
 void mat2_addmuls(mat2_t& out, const mat2_t& m0, const mat2_t& m1, num_t s) {
     out.e00 = m0.e00 + m1.e00 * s;
     out.e01 = m0.e01 + m1.e01 * s;

@@ -4,8 +4,8 @@
 #include "vec2_rand.h"
 
 void vec2_rand(vec2_t& out) {
-    out.x = num_t(random());
-    out.y = num_t(random());
+    out.x = num_t(frand());
+    out.y = num_t(frand());
 }
 
 vec2_t pre(vec2n_rand)() {

@@ -25,7 +25,7 @@ struct vec3_t {
     };
 };
 
-vec3_t vec3(num_t x = num_t(0.0));
+vec3_t vec3(num_t x = num_t(0));
 vec3_t vec3(num_t x, num_t y, num_t z);
 
 void vec3_zero(vec3_t& out);

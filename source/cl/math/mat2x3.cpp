@@ -6,7 +6,7 @@
 #include "mat2x3_t.cpp"
 #include "mat2x3_affine.cpp"
 
-// arithmetic matrix x matrix
+// arithmetic - matrix x matrix
 void mat2x3_add(mat2x3_t& out, const mat2x3_t& m0, const mat2x3_t& m1) {
     out.e00 = m0.e00 + m1.e00;
     out.e01 = m0.e01 + m1.e01;
@@ -49,7 +49,7 @@ void mat2x3m_sub(mat2x3_t& out, const mat2x3_t& m) {
     mat2x3_sub(out, out, m);
 }
 
-// arithmetic matrix x scalar
+// arithmetic - matrix x scalar
 void mat2x3_muls(mat2x3_t& out, const mat2x3_t& m, num_t s) {
     out.e00 = m.e00 * s;
     out.e01 = m.e01 * s;
@@ -71,7 +71,7 @@ void mat2x3m_muls(mat2x3_t& out, num_t s) {
     mat2x3_muls(out, out, s);
 }
 
-// arithmetic matrix x matrix x scalar
+// arithmetic - matrix x matrix x scalar
 void mat2x3_addmuls(mat2x3_t& out, const mat2x3_t& m0, const mat2x3_t& m1, num_t s) {
     out.e00 = m0.e00 + m1.e00 * s;
     out.e01 = m0.e01 + m1.e01 * s;

@@ -1,10 +1,16 @@
 #pragma once
 
+#undef num_t
+#define num_t f32
+
+#undef pre
+#define pre(name) f##name
+
 #undef MAT2_T
 #include "mat2_t.h"
 #include "vec2_t.h"
 
-// arithmetic matrix x matrix
+// arithmetic - matrix x matrix
 void mat2_add(mat2_t& out, const mat2_t& m0, const mat2_t& m1);
 mat2_t mat2n_add(const mat2_t& m0, const mat2_t& m1);
 void mat2m_add(mat2_t& out, const mat2_t& m);
@@ -13,12 +19,12 @@ void mat2_sub(mat2_t& out, const mat2_t& m0, const mat2_t& m1);
 mat2_t mat2n_sub(const mat2_t& m0, const mat2_t& m1);
 void mat2m_sub(mat2_t& out, const mat2_t& m);
 
-// arithmetic matrix x scalar
+// arithmetic - matrix x scalar
 void mat2_muls(mat2_t& out, const mat2_t& m, num_t s);
 mat2_t mat2n_muls(const mat2_t& m, num_t s);
 void mat2m_muls(mat2_t& out, num_t s);
 
-// arithmetic matrix x matrix x scalar
+// arithmetic - matrix x matrix x scalar
 void mat2_addmuls(mat2_t& out, const mat2_t& m0, const mat2_t& m1, num_t s);
 mat2_t mat2n_addmuls(const mat2_t& m0, const mat2_t& m1, num_t s);
 void mat2m_addmuls(mat2_t& out, const mat2_t& m, num_t s);

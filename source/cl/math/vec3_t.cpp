@@ -21,9 +21,9 @@ vec3_t vec3(num_t x, num_t y, num_t z) {
 }
 
 void vec3_zero(vec3_t& out) {
-    out.x = num_t(0.0);
-    out.y = num_t(0.0);
-    out.z = num_t(0.0);
+    out.x = num_t(0);
+    out.y = num_t(0);
+    out.z = num_t(0);
 }
 
 vec3_t pre(vec3n_zero)() {
