@@ -1,11 +1,3 @@
-#ifndef num_t
-    #define num_t f32
-#endif
-
-#ifndef pre
-    #define pre(name) f##name
-#endif
-
 #undef mat3_t
 #define mat3_t pre(mat3_t)
 

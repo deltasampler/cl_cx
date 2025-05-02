@@ -1,11 +1,3 @@
-#ifndef num_t
-    #define num_t f32
-#endif
-
-#ifndef pre
-    #define pre(name) f##name
-#endif
-
 #undef vec3_t
 #define vec3_t pre(vec3_t)
 
@@ -20,6 +12,7 @@ struct vec3_t {
     };
 };
 
+// creation
 vec3_t pre(vec3)(num_t x = num_t(0));
 vec3_t pre(vec3)(num_t x, num_t y, num_t z);
 
