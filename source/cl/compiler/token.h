@@ -1,5 +1,5 @@
 #pragma once
-#include <cl/type.h>
+#include <cl/types.h>
 
 enum TOKEN_TYPE {
     UNKNOWN,

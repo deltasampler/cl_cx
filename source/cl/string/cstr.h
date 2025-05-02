@@ -1,5 +1,5 @@
 #pragma once
-#include <cl/type.h>
+#include <cl/types.h>
 
 usize cstr_len(const char* cstr);
 char* cstr_copy(const char* cstr);

@@ -1,5 +1,5 @@
 #pragma once
-#include <cl/type.h>
+#include <cl/types.h>
 
 #define FSTR_CAP 256
 

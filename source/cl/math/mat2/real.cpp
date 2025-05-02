@@ -1,0 +1,181 @@
+// special
+num_t mat2_det(const mat2_t& m) {
+    return m.e00 * m.e11 - m.e10 * m.e01;
+}
+
+num_t mat2_frob(const mat2_t& m) {
+    return mhypot(
+        m.e00, m.e01,
+        m.e10, m.e11
+    );
+}
+
+void mat2_transp(mat2_t& out, const mat2_t& m) {
+    num_t temp = m.e01;
+
+    out.e00 = m.e00;
+    out.e01 = m.e10;
+    out.e10 = temp;
+    out.e11 = m.e11;
+}
+
+mat2_t mat2n_transp(const mat2_t& m) {
+    mat2_t out;
+
+    mat2_transp(out, m);
+
+    return out;
+}
+
+void mat2m_transp(mat2_t& out) {
+    mat2_transp(out, out);
+}
+
+void mat2_adjoint(mat2_t& out, const mat2_t& m) {
+    out.e00 = m.e11;
+    out.e01 = -m.e01;
+    out.e10 = -m.e10;
+    out.e11 = m.e00;
+}
+
+mat2_t mat2n_adjoint(const mat2_t& m) {
+    mat2_t out;
+
+    mat2_adjoint(out, m);
+
+    return out;
+}
+
+void mat2m_adjoint(mat2_t& out) {
+    mat2_adjoint(out, out);
+}
+
+void mat2_inv(mat2_t& out, const mat2_t& m) {
+    num_t e00 = m.e00, e01 = m.e01,
+          e10 = m.e10, e11 = m.e11;
+    num_t det = e00 * e11 - e10 * e01;
+
+    if (mabs(det) < num_t(EPSILON)) {
+        return;
+    }
+
+    det = num_t(1.0) / det;
+
+    out.e00 = e11 * det;
+    out.e01 = -e01 * det;
+    out.e10 = -e10 * det;
+    out.e11 = e00 * det;
+}
+
+mat2_t mat2n_inv(const mat2_t& m) {
+    mat2_t out;
+
+    mat2_inv(out, m);
+
+    return out;
+}
+
+void mat2m_inv(mat2_t& out) {
+    mat2_inv(out, out);
+}
+
+// affine
+void mat2_rotation(mat2_t& out, num_t r) {
+    num_t s = msin(r), c = mcos(r);
+
+    out.e00 = c;
+    out.e01 = s;
+    out.e10 = -s;
+    out.e11 = c;
+}
+
+mat2_t mat2n_rotation(num_t r) {
+    mat2_t out;
+
+    mat2_rotation(out, r);
+
+    return out;
+}
+
+void mat2_scaling(mat2_t& out, const vec2_t& v) {
+    out.e00 = v.x;
+    out.e01 = num_t(0.0);
+    out.e10 = num_t(0.0);
+    out.e10 = v.y;
+}
+
+mat2_t mat2n_scaling(const vec2_t& v) {
+    mat2_t out;
+
+    mat2_scaling(out, v);
+
+    return out;
+}
+
+void mat2_rotate(mat2_t& out, const mat2_t& m, num_t r) {
+    num_t e00 = m.e00, e01 = m.e01,
+          e10 = m.e10, e11 = m.e11;
+    num_t s = msin(r), c = mcos(r);
+
+    out.e00 = e00 * c + e10 * s;
+    out.e01 = e01 * c + e11 * s;
+    out.e10 = e00 * -s + e10 * c;
+    out.e11 = e01 * -s + e11 * c;
+}
+
+mat2_t mat2n_rotate(const mat2_t& m, num_t r) {
+    mat2_t out;
+
+    mat2_rotate(out, m, r);
+
+    return out;
+}
+
+void mat2m_rotate(mat2_t& out, num_t r) {
+    mat2_rotate(out, out, r);
+}
+
+void mat2_scale(mat2_t& out, const mat2_t& m, const vec2_t& v) {
+    num_t x = v.x, y = v.y;
+
+    out.e00 = m.e00 * x;
+    out.e01 = m.e01 * x;
+    out.e10 = m.e10 * y;
+    out.e11 = m.e11 * y;
+}
+
+mat2_t mat2n_scale(const mat2_t& m, const vec2_t& v) {
+    mat2_t out;
+
+    mat2_scale(out, m, v);
+
+    return out;
+}
+
+void mat2m_scale(mat2_t& out, const vec2_t& v) {
+    mat2_scale(out, out, v);
+}
+
+// comparison
+bool mat2_equals(const mat2_t& v0, const mat2_t& v1, num_t e) {
+    return mabs(v0.e00 - v1.e00) < e && mabs(v0.e01 - v1.e01) < e &&
+           mabs(v0.e10 - v1.e10) < e && mabs(v0.e11 - v1.e11) < e;
+}
+
+// string
+void mat2_str(const mat2_t& m, char* str) {
+    sprintf(
+        str,
+        "mat2(\n\t%f, %f,\n\t%f, %f\n)",
+        m.e00, m.e10,
+        m.e01, m.e11
+    );
+}
+
+void mat2_print(const mat2_t& m) {
+    char str[128];
+
+    mat2_str(m, str);
+
+    printf("%s\n", str);
+}

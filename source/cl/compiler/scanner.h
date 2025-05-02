@@ -1,5 +1,5 @@
 #pragma once
-#include <cl/type.h>
+#include <cl/types.h>
 
 bool is_alpha(char c);
 bool is_num(char c);
