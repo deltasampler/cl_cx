@@ -1,46 +1,27 @@
 #include <stdio.h>
-#include <cl/types.h>
 #include <cl/math/math_r.h>
 #include <cl/math/math_i.h>
 
 // float
-#undef num_t
-#define num_t f32
-
-#undef pre
-#define pre(name) f##name
-
-#include "../vec3/struct.h"
-#include "../vec4/struct.h"
-#include "struct.h"
+#include "../vec3/struct_f.h"
+#include "../vec4/struct_f.h"
+#include "struct_f.h"
 #include "struct.cpp"
 #include "base.cpp"
 #include "real.cpp"
 
 // double
-#undef num_t
-#define num_t f64
-
-#undef pre
-#define pre(name) d##name
-
-#include "../vec3/struct.h"
-#include "../vec4/struct.h"
-#include "struct.h"
+#include "../vec3/struct_d.h"
+#include "../vec4/struct_d.h"
+#include "struct_d.h"
 #include "struct.cpp"
 #include "base.cpp"
 #include "real.cpp"
 
 // int
-#undef num_t
-#define num_t s32
-
-#undef pre
-#define pre(name) s##name
-
-#include "../vec3/struct.h"
-#include "../vec4/struct.h"
-#include "struct.h"
+#include "../vec3/struct_s.h"
+#include "../vec4/struct_s.h"
+#include "struct_s.h"
 #include "struct.cpp"
 #include "base.cpp"
 #include "int.cpp"
@@ -66,15 +47,9 @@ void mat4_print(const mat4_t& m) {
 }
 
 // uint
-#undef num_t
-#define num_t u32
-
-#undef pre
-#define pre(name) u##name
-
-#include "../vec3/struct.h"
-#include "../vec4/struct.h"
-#include "struct.h"
+#include "../vec3/struct_u.h"
+#include "../vec4/struct_u.h"
+#include "struct_u.h"
 #include "struct.cpp"
 #include "base.cpp"
 #include "int.cpp"

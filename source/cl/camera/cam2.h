@@ -1,7 +1,7 @@
 #pragma once
 
-#include <cl/math/vec2_f.h>
-#include <cl/math/mat4_f.h>
+#include <cl/math/vec2/struct_f.h>
+#include <cl/math/mat4/struct_f.h>
 
 struct cam2_t {
     fvec2_t position;

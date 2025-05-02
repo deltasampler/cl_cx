@@ -1,14 +1,6 @@
 #pragma once
 
-#include <cl/types.h>
-
-#undef num_t
-#define num_t s32
-
-#undef pre
-#define pre(name) s##name
-
-#include "vec4/struct.h"
+#include "vec4/struct_s.h"
 #include "vec4/base.h"
 #include "vec4/int.h"
 

@@ -1,40 +1,21 @@
 #include <stdio.h>
-#include <cl/types.h>
 #include <cl/math/math_r.h>
 #include <cl/math/math_i.h>
 
 // float
-#undef num_t
-#define num_t f32
-
-#undef pre
-#define pre(name) f##name
-
-#include "struct.h"
+#include "struct_f.h"
 #include "struct.cpp"
 #include "base.cpp"
 #include "real.cpp"
 
 // double
-#undef num_t
-#define num_t f64
-
-#undef pre
-#define pre(name) d##name
-
-#include "struct.h"
+#include "struct_d.h"
 #include "struct.cpp"
 #include "base.cpp"
 #include "real.cpp"
 
 // int
-#undef num_t
-#define num_t s32
-
-#undef pre
-#define pre(name) s##name
-
-#include "struct.h"
+#include "struct_s.h"
 #include "struct.cpp"
 #include "base.cpp"
 #include "int.cpp"
@@ -90,13 +71,7 @@ void vec3_print(const vec3_t& v) {
 }
 
 // uint
-#undef num_t
-#define num_t u32
-
-#undef pre
-#define pre(name) u##name
-
-#include "struct.h"
+#include "struct_u.h"
 #include "struct.cpp"
 #include "base.cpp"
 #include "int.cpp"
