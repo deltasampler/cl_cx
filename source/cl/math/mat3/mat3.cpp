@@ -9,6 +9,7 @@
 #include "struct.cpp"
 #include "base.cpp"
 #include "real.cpp"
+#include "transf.cpp"
 
 // double
 #include "../vec2/struct_d.h"
@@ -17,6 +18,7 @@
 #include "struct.cpp"
 #include "base.cpp"
 #include "real.cpp"
+#include "transf.cpp"
 
 // int
 #include "../vec2/struct_s.h"
