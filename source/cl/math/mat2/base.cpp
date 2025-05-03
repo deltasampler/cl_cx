@@ -140,3 +140,12 @@ vec2_t mat2n_mulvm(const vec2_t& v, const mat2_t& m) {
 void mat2m_mulvm(vec2_t& out, const mat2_t& m) {
     mat2_mulvm(out, out, m);
 }
+
+// string
+void mat2_print(const mat2_t& m) {
+    char str[128];
+
+    mat2_str(m, str);
+
+    printf("%s\n", str);
+}

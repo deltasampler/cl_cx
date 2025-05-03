@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <cl/types.h>
+
 #include "math_r.h"
 
 f32 frand() {
@@ -14,7 +14,7 @@ f32 rand_ex(f32 min, f32 max) {
     return mfloor(frand() * (max - min) + min);
 }
 
-f32 rand_ex(f64 min, f64 max) {
+f64 rand_ex(f64 min, f64 max) {
     return mfloor(drand() * (max - min) + min);
 }
 

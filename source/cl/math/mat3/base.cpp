@@ -169,3 +169,12 @@ vec3_t mat3n_mulvm(const vec3_t& v, const mat3_t& m) {
 void mat3m_mulvm(vec3_t& out, const mat3_t& m) {
     mat3_mulvm(out, out, m);
 }
+
+// string
+void mat3_print(const mat3_t& m) {
+    char str[128];
+
+    mat3_str(m, str);
+
+    printf("%s\n", str);
+}

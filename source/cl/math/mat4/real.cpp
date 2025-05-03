@@ -189,11 +189,3 @@ void mat4_str(const mat4_t& m, char* str) {
         m.e03, m.e13, m.e23, m.e33
     );
 }
-
-void mat4_print(const mat4_t& m) {
-    char str[256];
-
-    mat4_str(m, str);
-
-    printf("%s\n", str);
-}

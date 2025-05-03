@@ -7,6 +7,7 @@
 #include "../vec4/struct_f.h"
 #include "struct_f.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "real.cpp"
 #include "transf.cpp"
@@ -16,6 +17,7 @@
 #include "../vec4/struct_d.h"
 #include "struct_d.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "real.cpp"
 #include "transf.cpp"
@@ -25,6 +27,7 @@
 #include "../vec4/struct_s.h"
 #include "struct_s.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "int.cpp"
 
@@ -40,19 +43,12 @@ void mat4_str(const mat4_t& m, char* str) {
     );
 }
 
-void mat4_print(const mat4_t& m) {
-    char str[256];
-
-    mat4_str(m, str);
-
-    printf("%s\n", str);
-}
-
 // uint
 #include "../vec3/struct_u.h"
 #include "../vec4/struct_u.h"
 #include "struct_u.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "int.cpp"
 
@@ -66,12 +62,4 @@ void mat4_str(const mat4_t& m, char* str) {
         m.e02, m.e12, m.e22, m.e32,
         m.e03, m.e13, m.e23, m.e33
     );
-}
-
-void mat4_print(const mat4_t& m) {
-    char str[256];
-
-    mat4_str(m, str);
-
-    printf("%s\n", str);
 }

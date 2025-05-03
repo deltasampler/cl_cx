@@ -301,11 +301,3 @@ bool vec4_equals(const vec4_t& v0, const vec4_t& v1, num_t e) {
 void vec4_str(const vec4_t& v, char* str) {
     sprintf(str, "vec4(%f, %f, %f, %f)", num_t(v.x), num_t(v.y), num_t(v.z), num_t(v.w));
 }
-
-void vec4_print(const vec4_t& v) {
-    char str[128];
-
-    vec4_str(v, str);
-
-    printf("%s\n", str);
-}

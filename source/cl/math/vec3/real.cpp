@@ -373,11 +373,3 @@ bool vec3_equals(const vec3_t& v0, const vec3_t& v1, num_t e) {
 void vec3_str(const vec3_t& v, char* str) {
     sprintf(str, "vec3(%f, %f, %f)", num_t(v.x), num_t(v.y), num_t(v.z));
 }
-
-void vec3_print(const vec3_t& v) {
-    char str[128];
-
-    vec3_str(v, str);
-
-    printf("%s\n", str);
-}

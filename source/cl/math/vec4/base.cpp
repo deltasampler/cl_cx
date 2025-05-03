@@ -222,6 +222,15 @@ void vec4m_clamp(vec4_t& out, const vec4_t& min, const vec4_t& max) {
     vec4_clamp(out, out, min, max);
 }
 
+// string
+void vec4_print(const vec4_t& v) {
+    char str[128];
+
+    vec4_str(v, str);
+
+    printf("%s\n", str);
+}
+
 // arithmetic - operator overloading - vector x vector
 vec4_t operator+(const vec4_t& v0, const vec4_t& v1) {
     return vec4n_add(v0, v1);

@@ -140,10 +140,8 @@ f64 mclamp(f64 x, f64 min, f64 max);
 f32 mwrap(f32 x, f32 max);
 f64 mwrap(f64 x, f64 max);
 
-/*
 f32 mwrap2(f32 x, f32 min, f32 max);
 f64 mwrap2(f64 x, f64 min, f64 max);
-*/
 
 // interpolation
 f32 mlerp(f32 x, f32 y, f32 t);

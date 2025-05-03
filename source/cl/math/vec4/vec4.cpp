@@ -5,18 +5,21 @@
 // float
 #include "struct_f.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "real.cpp"
 
 // double
 #include "struct_d.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "real.cpp"
 
 // int
 #include "struct_s.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "int.cpp"
 
@@ -64,29 +67,14 @@ void vec4_str(const vec4_t& v, char* str) {
     sprintf(str, "vec4(%i, %i, %i, %i)", num_t(v.x), num_t(v.y), num_t(v.z), num_t(v.w));
 }
 
-void vec4_print(const vec4_t& v) {
-    char str[128];
-
-    vec4_str(v, str);
-
-    printf("%s\n", str);
-}
-
 // uint
 #include "struct_u.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "int.cpp"
 
 // string
 void vec4_str(const vec4_t& v, char* str) {
     sprintf(str, "vec4(%u, %u, %u, %u)", num_t(v.x), num_t(v.y), num_t(v.z), num_t(v.w));
-}
-
-void vec4_print(const vec4_t& v) {
-    char str[128];
-
-    vec4_str(v, str);
-
-    printf("%s\n", str);
 }

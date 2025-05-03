@@ -209,3 +209,12 @@ void mat4m_mulvm(vec4_t& out, const mat4_t& m) {
     mat4_mulvm(out, out, m);
 
 }
+
+// string
+void mat4_print(const mat4_t& m) {
+    char str[256];
+
+    mat4_str(m, str);
+
+    printf("%s\n", str);
+}

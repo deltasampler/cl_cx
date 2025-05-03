@@ -356,15 +356,17 @@ f64 mwrap(f64 x, f64 max) {
     return fmod(x + max, max);
 }
 
-/*
 f32 mwrap2(f32 x, f32 min, f32 max) {
+    float r = max - min;
 
+    return fmodf(fmodf(x - min, r) + r, r) + min;
 }
 
 f64 mwrap2(f64 x, f64 min, f64 max) {
+    float r = max - min;
 
+    return fmod(fmod(x - min, r) + r, r) + min;
 }
-*/
 
 // interpolation
 f32 mlerp(f32 x, f32 y, f32 t) {

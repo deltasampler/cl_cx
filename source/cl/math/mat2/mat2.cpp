@@ -6,6 +6,7 @@
 #include "../vec2/struct_f.h"
 #include "struct_f.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "real.cpp"
 #include "transf.cpp"
@@ -14,6 +15,7 @@
 #include "../vec2/struct_d.h"
 #include "struct_d.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "real.cpp"
 #include "transf.cpp"
@@ -22,6 +24,7 @@
 #include "../vec2/struct_s.h"
 #include "struct_s.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "int.cpp"
 
@@ -35,18 +38,11 @@ void mat2_str(const mat2_t& m, char* str) {
     );
 }
 
-void mat2_print(const mat2_t& m) {
-    char str[128];
-
-    mat2_str(m, str);
-
-    printf("%s\n", str);
-}
-
 // uint
 #include "../vec2/struct_u.h"
 #include "struct_u.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "int.cpp"
 
@@ -58,12 +54,4 @@ void mat2_str(const mat2_t& m, char* str) {
         m.e00, m.e10,
         m.e01, m.e11
     );
-}
-
-void mat2_print(const mat2_t& m) {
-    char str[128];
-
-    mat2_str(m, str);
-
-    printf("%s\n", str);
 }

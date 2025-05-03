@@ -47,12 +47,18 @@ u32 mwrap(u32 x, u32 max) {
     return (x + max) % max;
 }
 
-/*
 s32 mwrap2(s32 x, s32 min, s32 max) {
+    s32 r = max - min;
 
+    if (r == 0) return min;
+
+    return ((x - min) % r + r) % r + min;
 }
 
 u32 mwrap2(u32 x, u32 min, u32 max) {
+    u32 r = max - min;
 
+    if (r == 0) return min;
+
+    return ((x - min) % r) + min;
 }
-*/

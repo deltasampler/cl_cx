@@ -5,18 +5,21 @@
 // float
 #include "struct_f.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "real.cpp"
 
 // double
 #include "struct_d.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "real.cpp"
 
 // int
 #include "struct_s.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "int.cpp"
 
@@ -55,35 +58,19 @@ void vec2m_neg(vec2_t& out) {
     vec2_neg(out, out);
 }
 
-
 // string
 void vec2_str(const vec2_t& v, char* str) {
     sprintf(str, "vec2(%i, %i)", num_t(v.x), num_t(v.y));
 }
 
-void vec2_print(const vec2_t& v) {
-    char str[128];
-
-    vec2_str(v, str);
-
-    printf("%s\n", str);
-}
-
 // uint
 #include "struct_u.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "int.cpp"
 
 // string
 void vec2_str(const vec2_t& v, char* str) {
     sprintf(str, "vec2(%u, %u)", num_t(v.x), num_t(v.y));
-}
-
-void vec2_print(const vec2_t& v) {
-    char str[128];
-
-    vec2_str(v, str);
-
-    printf("%s\n", str);
 }

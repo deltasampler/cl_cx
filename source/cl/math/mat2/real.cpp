@@ -94,11 +94,3 @@ void mat2_str(const mat2_t& m, char* str) {
         m.e01, m.e11
     );
 }
-
-void mat2_print(const mat2_t& m) {
-    char str[128];
-
-    mat2_str(m, str);
-
-    printf("%s\n", str);
-}

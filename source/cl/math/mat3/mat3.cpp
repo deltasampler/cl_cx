@@ -7,6 +7,7 @@
 #include "../vec3/struct_f.h"
 #include "struct_f.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "real.cpp"
 #include "transf.cpp"
@@ -16,6 +17,7 @@
 #include "../vec3/struct_d.h"
 #include "struct_d.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "real.cpp"
 #include "transf.cpp"
@@ -25,6 +27,7 @@
 #include "../vec3/struct_s.h"
 #include "struct_s.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "int.cpp"
 
@@ -39,19 +42,12 @@ void mat3_str(const mat3_t& m, char* str) {
     );
 }
 
-void mat3_print(const mat3_t& m) {
-    char str[128];
-
-    mat3_str(m, str);
-
-    printf("%s\n", str);
-}
-
 // uint
 #include "../vec2/struct_u.h"
 #include "../vec3/struct_u.h"
 #include "struct_u.h"
 #include "struct.cpp"
+#include "base.h"
 #include "base.cpp"
 #include "int.cpp"
 
@@ -64,12 +60,4 @@ void mat3_str(const mat3_t& m, char* str) {
         m.e01, m.e11, m.e21,
         m.e02, m.e12, m.e22
     );
-}
-
-void mat3_print(const mat3_t& m) {
-    char str[128];
-
-    mat3_str(m, str);
-
-    printf("%s\n", str);
 }

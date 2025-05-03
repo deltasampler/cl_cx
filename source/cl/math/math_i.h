@@ -20,7 +20,5 @@ u32 mclamp(u32 x, u32 min, u32 max);
 s32 mwrap(s32 x, s32 max);
 u32 mwrap(u32 x, u32 max);
 
-/*
 s32 mwrap2(s32 x, s32 min, s32 max);
 u32 mwrap2(u32 x, u32 min, u32 max);
-*/

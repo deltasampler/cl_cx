@@ -210,6 +210,15 @@ void vec3m_clamp(vec3_t& out, const vec3_t& min, const vec3_t& max) {
     vec3_clamp(out, out, min, max);
 }
 
+// string
+void vec3_print(const vec3_t& v) {
+    char str[128];
+
+    vec3_str(v, str);
+
+    printf("%s\n", str);
+}
+
 // arithmetic - operator overloading - vector x vector
 vec3_t operator+(const vec3_t& v0, const vec3_t& v1) {
     return vec3n_add(v0, v1);

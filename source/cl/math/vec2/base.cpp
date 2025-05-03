@@ -198,6 +198,15 @@ void vec2m_clamp(vec2_t& out, const vec2_t& min, const vec2_t& max) {
     vec2_clamp(out, out, min, max);
 }
 
+// string
+void vec2_print(const vec2_t& v) {
+    char str[128];
+
+    vec2_str(v, str);
+
+    printf("%s\n", str);
+}
+
 // arithmetic - operator overloading - vector x vector
 vec2_t operator+(const vec2_t& v0, const vec2_t& v1) {
     return vec2n_add(v0, v1);

@@ -130,11 +130,3 @@ void mat3_str(const mat3_t& m, char* str) {
         m.e02, m.e12, m.e22
     );
 }
-
-void mat3_print(const mat3_t& m) {
-    char str[128];
-
-    mat3_str(m, str);
-
-    printf("%s\n", str);
-}
