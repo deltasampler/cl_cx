@@ -1,6 +1,5 @@
 #pragma once
 
-#include "vec3/struct_s.h"
 #include "vec4/struct_s.h"
 #include "mat4/struct_s.h"
 #include "mat4/base.h"

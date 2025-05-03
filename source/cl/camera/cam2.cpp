@@ -1,6 +1,6 @@
-#include <cl/math/vec2_f.h>
-#include <cl/math/vec3_f.h>
-#include <cl/math/mat4_f.h>
+#include <cl/math/vec2_base_f.h>
+#include <cl/math/vec3_base_f.h>
+#include <cl/math/mat4_base_f.h>
 #include <cl/math/mat4_transf_f.h>
 
 #include "cam2.h"
