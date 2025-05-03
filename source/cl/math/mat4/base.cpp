@@ -218,3 +218,61 @@ void mat4_print(const mat4_t& m) {
 
     printf("%s\n", str);
 }
+
+// arithmetic operator overloading - matrix x matrix
+mat4_t operator+(const mat4_t& m0, const mat4_t& m1) {
+    return mat4n_add(m0, m1);
+}
+
+mat4_t& operator+=(mat4_t& out, const mat4_t& m) {
+    mat4m_add(out, m);
+
+    return out;
+}
+
+mat4_t operator-(const mat4_t& m0, const mat4_t& m1) {
+    return mat4n_sub(m0, m1);
+}
+
+mat4_t& operator-=(mat4_t& out, const mat4_t& m) {
+    mat4m_sub(out, m);
+
+    return out;
+}
+
+// arithmetic operator overloading - matrix x scalar
+mat4_t operator*(const mat4_t& m, num_t s) {
+    return mat4n_muls(m, s);
+}
+
+mat4_t& operator*=(mat4_t& out, num_t s) {
+    mat4m_muls(out, s);
+
+    return out;
+}
+
+// product operator overloading - matrix x matrix
+mat4_t operator*(const mat4_t& m0, const mat4_t& m1) {
+    return mat4n_mul(m0, m1);
+}
+
+mat4_t& operator*=(mat4_t& out, const mat4_t& m) {
+    mat4m_mul(out, m);
+
+    return out;
+}
+
+// product operator overloading - matrix x vector
+vec4_t operator*(const mat4_t& m, const vec4_t& v) {
+    return mat4n_mulmv(v, m);
+}
+
+vec4_t operator*(const vec4_t& v, const mat4_t& m) {
+    return mat4n_mulvm(v, m);
+}
+
+vec4_t& operator*=(vec4_t& out, const mat4_t& m) {
+    mat4m_mulvm(out, m);
+
+    return out;
+}

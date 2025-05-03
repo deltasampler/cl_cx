@@ -34,3 +34,24 @@ void mat2m_mulvm(vec2_t& out, const mat2_t& m);
 // string
 void mat2_str(const mat2_t& m, char* str);
 void mat2_print(const mat2_t& m);
+
+// arithmetic operator overloading - matrix x matrix
+mat2_t operator+(const mat2_t& m0, const mat2_t& m1);
+mat2_t& operator+=(mat2_t& out, const mat2_t& m);
+
+mat2_t operator-(const mat2_t& m0, const mat2_t& m1);
+mat2_t& operator-=(mat2_t& out, const mat2_t& m);
+
+// arithmetic operator overloading - matrix x scalar
+mat2_t operator*(const mat2_t& m, num_t s);
+mat2_t& operator*=(mat2_t& out, num_t s);
+
+// product operator overloading - matrix x matrix
+mat2_t operator*(const mat2_t& m0, const mat2_t& m1);
+mat2_t& operator*=(mat2_t& out, const mat2_t& m);
+
+// product operator overloading - matrix x vector
+vec2_t operator*(const mat2_t& m, const vec2_t& v);
+
+vec2_t operator*(const vec2_t& v, const mat2_t& m);
+vec2_t& operator*=(vec2_t& out, const mat2_t& m);
