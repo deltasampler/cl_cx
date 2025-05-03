@@ -1,6 +1,6 @@
 #include <math.h>
 
-#include <cl/types.h>
+#include "math_r.h"
 
 // basic
 f32 mabs(f32 x) {
@@ -145,6 +145,23 @@ f32 mlog10(f32 x) {
 
 f64 mlog10(f64 x) {
     return log10(x);
+}
+
+// angles
+f32 mrad(f32 x) {
+    return x * f32(PI) / 180.0f;
+}
+
+f64 mrad(f64 x) {
+    return x * f64(PI) / 180.0;
+}
+
+f32 mdeg(f32 x) {
+    return x * 180.0f / f32(PI);
+}
+
+f64 mdeg(f64 x) {
+    return x * 180.0 / f64(PI);
 }
 
 // trigonometric

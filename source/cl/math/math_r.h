@@ -60,6 +60,13 @@ f64 mlog2(f64 x);
 f32 mlog10(f32 x);
 f64 mlog10(f64 x);
 
+// angles
+f32 mrad(f32 x);
+f64 mrad(f64 x);
+
+f32 mdeg(f32 x);
+f64 mdeg(f64 x);
+
 // trigonometric
 f32 msin(f32 x);
 f64 msin(f64 x);

@@ -1,6 +1,7 @@
 set(
     CL_SOURCE
     "source/cl/camera/cam2.cpp"
+    "source/cl/camera/cam3.cpp"
     "source/cl/compiler/lexer.cpp"
     "source/cl/compiler/scanner.cpp"
     "source/cl/compiler/token.cpp"

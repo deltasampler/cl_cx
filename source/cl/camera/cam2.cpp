@@ -43,7 +43,7 @@ void cam2_zoom(cam2_t& cam, f32 dir) {
 
 void cam2_compute_proj(cam2_t& cam, s32 viewport_x, s32 viewport_y) {
     mat4_ident(cam.projection);
-    mat4_scale(cam.projection, cam.projection, fvec3(cam.scale / (f32)viewport_x, cam.scale / (f32)viewport_y, 1.0f));
+    mat4_scale(cam.projection, cam.projection, fvec3(cam.scale / f32(viewport_x), cam.scale / f32(viewport_y), 1.0f));
 }
 
 void cam2_compute_view(cam2_t& cam) {

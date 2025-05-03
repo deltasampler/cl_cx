@@ -1,6 +1,6 @@
 #include <math.h>
 
-#include <cl/types.h>
+#include "math_i.h"
 
 // basic
 s32 mabs(s32 x) {
