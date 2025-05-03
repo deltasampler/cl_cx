@@ -8,6 +8,7 @@
 #include "base.h"
 #include "base.cpp"
 #include "real.cpp"
+#include "color.cpp"
 
 // double
 #include "struct_d.h"
@@ -15,6 +16,7 @@
 #include "base.h"
 #include "base.cpp"
 #include "real.cpp"
+#include "color.cpp"
 
 // int
 #include "struct_s.h"

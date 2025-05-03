@@ -1,7 +1,3 @@
-// color
-vec3_t pre(rgb)(num_t r = num_t(0.0), num_t g = num_t(0.0), num_t b = num_t(0.0));
-vec3_t pre(hex)(s32 h = 0);
-
 // basic
 void vec3_abs(vec3_t& out, const vec3_t& v);
 vec3_t vec3n_abs(const vec3_t& out);
