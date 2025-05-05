@@ -1,8 +1,10 @@
+#include <stdlib.h>
 #include "cstr.h"
+
 #include "dstr.h"
 
 void dstr_new(dstr_t& str, usize cap) {
-    str.data = new char[cap];
+    str.data = (char*)malloc(sizeof(char) * cap);
     str.cap = cap;
     str.len = 0;
 }
@@ -12,19 +14,19 @@ void dstr_del(dstr_t& str) {
         return;
     }
 
-    delete[] str.data; str.data = nullptr;
+    free(str.data); str.data = nullptr;
     str.cap = 0;
     str.len = 0;
 }
 
 void dstr_realloc(dstr_t& str, usize cap) {
-    delete[] str.data; str.data = new char[cap];
+    free(str.data); str.data = (char*)malloc(sizeof(char) * cap);
     str.cap = cap;
     str.len = 0;
 }
 
 void dstr_resize(dstr_t& str, usize cap) {
-    char* data = new char[cap];
+    char* data = (char*)malloc(sizeof(char) * cap);
 
     usize len = 0;
 
@@ -35,7 +37,7 @@ void dstr_resize(dstr_t& str, usize cap) {
 
     data[len] = '\0';
 
-    delete[] str.data; str.data = data;
+    free(str.data); str.data = data;
     str.cap = cap;
     str.len = len;
 }

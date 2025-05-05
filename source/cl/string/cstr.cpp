@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 #include "cstr.h"
 
 usize cstr_len(const char* cstr) {
@@ -12,7 +14,7 @@ usize cstr_len(const char* cstr) {
 
 char* cstr_copy(const char* cstr) {
     usize cap = cstr_len(cstr) + 1;
-    char* out = new char[cap];
+    char* out = (char*)malloc(sizeof(char) * cap);
 
     for (usize i = 0; i < cap; i += 1) {
         out[i] = cstr[i];
