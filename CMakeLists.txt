@@ -18,7 +18,7 @@ set(
     "source/cl/math/rand_r.cpp"
     "source/cl/string/cstr.cpp"
     "source/cl/string/dstr.cpp"
-    "source/cl/string/fstr.cpp"
+    "source/cl/string/sstr.cpp"
 )
 
 add_library(cl ${CL_SOURCE})
